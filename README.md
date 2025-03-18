@@ -10,18 +10,18 @@ This repository contains an analysis of global carbon emissions patterns using c
 - **Interactive Visualization**: Created Tableau storyboard to explore emissions clusters
 
 ## Repository Structure
-01 **Project Management**: Contains project planning documents, timelines, and requirements
-02 **Data**: Houses raw datasets and processed data files
-03 **Scripts**: Includes Python scripts and Jupyter notebooks for data processing and analysis
--- **01_data_preparation**.ipynb: Data cleaning and feature engineering
--- **02_clustering_analysis**.ipynb: Clustering implementation and visualization
-04 **Analysis**: Contains analysis outputs, charts, and the cluster profiles report
--- cluster_profiles_report.md: Detailed analysis of cluster characteristics
--- emissions_clusters_for_tableau.csv: Final dataset with cluster assignments
-05 **Sent to Client**: Final deliverables and presentation materials
--- Tableau workbooks and storyboards
--- Final presentation documents
-README.md: Project overview and repository guide
+- 01 **Project Management**: Contains project planning documents, timelines, and requirements
+- 02 **Data**: Houses raw datasets and processed data files
+- 03 **Scripts**: Includes Python scripts and Jupyter notebooks for data processing and analysis
+  	- **01_data_preparation**.ipynb: Data cleaning and feature engineering
+  	- **02_clustering_analysis**.ipynb: Clustering implementation and visualization
+- 04 **Analysis**: Contains analysis outputs, charts, and the cluster profiles report
+  	- cluster_profiles_report.md: Detailed analysis of cluster characteristics
+  	- emissions_clusters_for_tableau.csv: Final dataset with cluster assignments
+- 05 **Sent to Client**: Final deliverables and presentation materials
+  	- Tableau workbooks and storyboards
+  	- Final presentation documents
+- README.md: Project overview and repository guide
 
 ## Methodology
 The analysis uses a comprehensive dataset of global carbon emissions with metrics including:
