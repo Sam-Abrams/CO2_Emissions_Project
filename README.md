@@ -1,9 +1,7 @@
-# CO2_Emissions_Project
- 
 # Global CO2 Emissions Clustering Analysis
 
 ## Project Overview
-This repository contains a data-driven analysis of global carbon emissions patterns using clustering techniques to identify natural groupings of countries based on their emissions profiles. By analyzing emissions intensity, energy source mix, and historical contributions, this project reveals distinct country archetypes that can inform differentiated climate policy approaches.
+This repository contains an analysis of global carbon emissions patterns using clustering techniques to identify natural groupings of countries based on their emissions profiles. By analyzing emissions intensity, energy source mix, and historical contributions, this project reveals distinct country archetypes that can inform differentiated climate policy approaches.
 
 ## Key Features
 - **Unsupervised Machine Learning**: Applied hierarchical clustering to identify natural country groupings
@@ -12,18 +10,18 @@ This repository contains a data-driven analysis of global carbon emissions patte
 - **Interactive Visualization**: Created Tableau storyboard to explore emissions clusters
 
 ## Repository Structure
-- `notebooks/`: Jupyter notebooks with data processing and analysis code
-  - `01_data_preparation.ipynb`: Data cleaning and feature engineering
-  - `02_clustering_analysis.ipynb`: Clustering implementation and visualization
-- `data/`: Data files
-  - `raw/`: Original emissions dataset
-  - `processed/`: Cleaned and transformed data for analysis
-  - `emissions_clusters_for_tableau.csv`: Final dataset with cluster assignments
-- `docs/`: Project documentation
-  - `cluster_profiles_report.md`: Detailed analysis of cluster characteristics
-  - `project_brief.md`: Overview of project objectives and methodology
-- `tableau/`: Tableau workbooks and visualization files
-- `README.md`: Project overview and repository guide
+01 **Project Management**: Contains project planning documents, timelines, and requirements
+02 **Data**: Houses raw datasets and processed data files
+03 **Scripts**: Includes Python scripts and Jupyter notebooks for data processing and analysis
+-- **01_data_preparation**.ipynb: Data cleaning and feature engineering
+-- **02_clustering_analysis**.ipynb: Clustering implementation and visualization
+04 **Analysis**: Contains analysis outputs, charts, and the cluster profiles report
+-- cluster_profiles_report.md: Detailed analysis of cluster characteristics
+-- emissions_clusters_for_tableau.csv: Final dataset with cluster assignments
+05 **Sent to Client**: Final deliverables and presentation materials
+-- Tableau workbooks and storyboards
+-- Final presentation documents
+README.md: Project overview and repository guide
 
 ## Methodology
 The analysis uses a comprehensive dataset of global carbon emissions with metrics including:
