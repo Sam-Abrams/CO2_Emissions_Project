@@ -28,7 +28,6 @@ The analysis uses a comprehensive dataset of global carbon emissions with metric
 - CO2 emissions per capita
 - Energy source mix (coal, oil, gas proportions)
 - Cumulative historical emissions
-- Population and economic indicators
 
 Countries were clustered based on these features, revealing distinct emissions profiles:
 1. **Moderate Mixed-Source Emitters**: Balanced energy portfolio with medium emissions intensity
@@ -36,8 +35,6 @@ Countries were clustered based on these features, revealing distinct emissions p
 3. **Coal-Dependent Heavy Emitters**: Coal-reliant with high per-capita emissions
 4. **Gas-Dominant High Per-Capita Emitters**: Gas-focused with the highest per-capita emissions
 5. **Exceptional Emitter**: The United States, with a unique emissions profile unlike any other nation
-
-The more detailed 8-cluster solution provides additional granularity for in-depth analysis.
 
 ## Key Findings
 - The United States consistently appears as a unique outlier in both clustering solutions
@@ -56,7 +53,6 @@ The more detailed 8-cluster solution provides additional granularity for in-dept
 Future extensions to this project may include:
 - Temporal analysis to track how countries move between clusters over time
 - Forecasting models to predict future emissions trajectories by cluster
-- Policy simulation to model intervention impacts on cluster transitions
 
 
 ## Contact
