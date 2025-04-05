@@ -23,17 +23,724 @@
     <WindowsPersistSimpleIdentifiers />
     <WorksheetBackgroundTransparency />
   </document-format-change-manifest>
-  <repository-location id='CO2EmissionsProject_17423932995130' path='/workbooks' revision='2.4' />
+  <repository-location id='CO2EmissionsProject_17423932995130' path='/workbooks' revision='3.5' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
   </preferences>
   <datasources>
+    <datasource caption='emissions_clusters_for_tableau (copy)' inline='true' name='federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='emissions_clusters_for_tableau' name='textscan.09ffmb60ra56x312k6xc40xsnzsq (copy)'>
+            <connection class='textscan' directory='/Users/samabrams/Data Analysis Projects/CO2_Emissions_Project/02 Data/Prepared Data' filename='emissions_clusters_for_tableau.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation name='Pivot' type='pivot'>
+          <columns>
+            <column datatype='string' name='Pivot Field Names' />
+            <column datatype='real' name='Pivot Field Values' />
+          </columns>
+          <tag name='Pivot Field Names'>
+            <value name='[Co2 Per Capita]' />
+            <value name='[Coal Share]' />
+            <value name='[Gas Share]' />
+            <value name='[Oil Share]' />
+            <value name='[Co2]' />
+            <value name='[Cumulative Co2]' />
+          </tag>
+          <groups>
+            <group name='Pivot Field Values'>
+              <field name='[emissions_clusters_for_tableau.csv].[co2_per_capita]' />
+              <field name='[emissions_clusters_for_tableau.csv].[coal_share]' />
+              <field name='[emissions_clusters_for_tableau.csv].[gas_share]' />
+              <field name='[emissions_clusters_for_tableau.csv].[oil_share]' />
+              <field name='[emissions_clusters_for_tableau.csv].[co2]' />
+              <field name='[emissions_clusters_for_tableau.csv].[cumulative_co2]' />
+            </group>
+          </groups>
+          <relation connection='textscan.09ffmb60ra56x312k6xc40xsnzsq (copy)' name='emissions_clusters_for_tableau.csv' table='[emissions_clusters_for_tableau#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='country' ordinal='0' />
+              <column datatype='string' name='iso_code' ordinal='1' />
+              <column datatype='real' name='co2' ordinal='2' />
+              <column datatype='real' name='co2_per_capita' ordinal='3' />
+              <column datatype='real' name='coal_co2' ordinal='4' />
+              <column datatype='real' name='oil_co2' ordinal='5' />
+              <column datatype='real' name='gas_co2' ordinal='6' />
+              <column datatype='real' name='cement_co2' ordinal='7' />
+              <column datatype='real' name='cumulative_co2' ordinal='8' />
+              <column datatype='real' name='land_use_change_co2' ordinal='9' />
+              <column datatype='real' name='population' ordinal='10' />
+              <column datatype='real' name='coal_share' ordinal='11' />
+              <column datatype='real' name='oil_share' ordinal='12' />
+              <column datatype='real' name='gas_share' ordinal='13' />
+              <column datatype='integer' name='cluster_5' ordinal='14' />
+              <column datatype='string' name='cluster_5_name' ordinal='15' />
+              <column datatype='integer' name='cluster_8' ordinal='16' />
+              <column datatype='string' name='cluster_8_name' ordinal='17' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[country]</local-name>
+            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
+            <remote-alias>country</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>iso_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[iso_code]</local-name>
+            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
+            <remote-alias>iso_code</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>coal_co2</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[coal_co2]</local-name>
+            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
+            <remote-alias>coal_co2</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>oil_co2</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[oil_co2]</local-name>
+            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
+            <remote-alias>oil_co2</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gas_co2</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[gas_co2]</local-name>
+            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
+            <remote-alias>gas_co2</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cement_co2</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[cement_co2]</local-name>
+            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
+            <remote-alias>cement_co2</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>land_use_change_co2</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[land_use_change_co2]</local-name>
+            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
+            <remote-alias>land_use_change_co2</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>population</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[population]</local-name>
+            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
+            <remote-alias>population</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cluster_5</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[cluster_5]</local-name>
+            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
+            <remote-alias>cluster_5</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cluster_5_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[cluster_5_name]</local-name>
+            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
+            <remote-alias>cluster_5_name</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cluster_8</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[cluster_8]</local-name>
+            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
+            <remote-alias>cluster_8</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cluster_8_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[cluster_8_name]</local-name>
+            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
+            <remote-alias>cluster_8_name</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Names</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Pivot Field Names]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Names</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Values</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Pivot Field Values]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Values</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Dominant Energy Source' datatype='string' name='[Calculation_2123939864289161216]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [coal_share] &gt; [oil_share] AND [coal_share] &gt; [gas_share] THEN &apos;Coal&apos;&#10;ELSEIF [oil_share] &gt; [coal_share] AND [oil_share] &gt; [gas_share] THEN &apos;Oil&apos;&#10;ELSE &apos;Gas&apos;&#10;END' />
+      </column>
+      <column caption='Coal Percentage' datatype='real' name='[Calculation_3923479760490627072]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='AVG([coal_share])*100' />
+      </column>
+      <column caption='Oil Percentage' datatype='real' name='[Calculation_3923479760490881025]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='AVG([oil_share])*100' />
+      </column>
+      <column caption='Gas Percentage' datatype='real' name='[Calculation_3923479760490979330]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='AVG([gas_share])*100' />
+      </column>
+      <column caption='USA vs. Global' datatype='string' name='[Calculation_4396850302678732800]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='IF ATTR([country]) = &quot;United States&quot; THEN &quot;USA&quot; ELSE &quot;Global Average&quot; END' />
+      </column>
+      <column caption='Characteristic' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal' />
+      <column caption='emissions_clusters_for_tableau.csv' datatype='table' name='[__tableau_internal_object_id__].[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]' role='measure' type='quantitative' />
+      <column caption='emissions_clusters_normalized.csv' datatype='table' hidden='true' name='[__tableau_internal_object_id__].[emissions_clusters_normalized.csv_AAD5FEFE3A4B410CA7D4E6B5BDA83AE6]' role='measure' type='quantitative' />
+      <column caption='Cement Co2 (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[cement_co2 (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
+      <column caption='Cement Co2' datatype='real' name='[cement_co2]' role='measure' type='quantitative' />
+      <column caption='Cement Co2 Normalized' datatype='real' hidden='true' name='[cement_co2_normalized]' role='measure' type='quantitative' />
+      <column caption='Cluster 5 (Emissions Clusters Normalized.Csv)' datatype='integer' hidden='true' name='[cluster_5 (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
+      <column caption='Cluster 5' datatype='integer' name='[cluster_5]' role='measure' type='quantitative' />
+      <column caption='Cluster 5 Name (Emissions Clusters Normalized.Csv)' datatype='string' hidden='true' name='[cluster_5_name (emissions_clusters_normalized.csv)]' role='dimension' type='nominal' />
+      <column caption='Cluster 5 Name' datatype='string' name='[cluster_5_name]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;Exceptional Emitter: Unique Emissions Profile&quot;' value='United States' />
+        </aliases>
+      </column>
+      <column caption='Cluster 8 (Emissions Clusters Normalized.Csv)' datatype='integer' hidden='true' name='[cluster_8 (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
+      <column caption='Cluster 8' datatype='integer' name='[cluster_8]' role='measure' type='quantitative' />
+      <column caption='Cluster 8 Name (Emissions Clusters Normalized.Csv)' datatype='string' hidden='true' name='[cluster_8_name (emissions_clusters_normalized.csv)]' role='dimension' type='nominal' />
+      <column caption='Cluster 8 Name' datatype='string' name='[cluster_8_name]' role='dimension' type='nominal' />
+      <column caption='Co2 (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[co2 (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
+      <column caption='Co2 Normalized' datatype='real' hidden='true' name='[co2_normalized]' role='measure' type='quantitative' />
+      <column caption='Co2 Per Capita (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[co2_per_capita (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
+      <column caption='Co2 Per Capita Normalized' datatype='real' hidden='true' name='[co2_per_capita_normalized]' role='measure' type='quantitative' />
+      <column caption='Coal Co2 (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[coal_co2 (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
+      <column caption='Coal Co2' datatype='real' name='[coal_co2]' role='measure' type='quantitative' />
+      <column caption='Coal Co2 Normalized' datatype='real' hidden='true' name='[coal_co2_normalized]' role='measure' type='quantitative' />
+      <column caption='Coal Share (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[coal_share (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
+      <column caption='Coal Share Normalized' datatype='real' hidden='true' name='[coal_share_normalized]' role='measure' type='quantitative' />
+      <column caption='Country (Emissions Clusters Normalized.Csv)' datatype='string' hidden='true' name='[country (emissions_clusters_normalized.csv)]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Cumulative Co2 (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[cumulative_co2 (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
+      <column caption='Cumulative Co2 Normalized' datatype='real' hidden='true' name='[cumulative_co2_normalized]' role='measure' type='quantitative' />
+      <column caption='Gas Co2 (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[gas_co2 (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
+      <column caption='Gas Co2' datatype='real' name='[gas_co2]' role='measure' type='quantitative' />
+      <column caption='Gas Co2 Normalized' datatype='real' hidden='true' name='[gas_co2_normalized]' role='measure' type='quantitative' />
+      <column caption='Gas Share (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[gas_share (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
+      <column caption='Gas Share Normalized' datatype='real' hidden='true' name='[gas_share_normalized]' role='measure' type='quantitative' />
+      <column caption='Iso Code (Emissions Clusters Normalized.Csv)' datatype='string' hidden='true' name='[iso_code (emissions_clusters_normalized.csv)]' role='dimension' type='nominal' />
+      <column caption='Iso Code' datatype='string' name='[iso_code]' role='dimension' type='nominal' />
+      <column caption='Land Use Change Co2 (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[land_use_change_co2 (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
+      <column caption='Land Use Change Co2' datatype='real' name='[land_use_change_co2]' role='measure' type='quantitative' />
+      <column caption='Land Use Change Co2 Normalized' datatype='real' hidden='true' name='[land_use_change_co2_normalized]' role='measure' type='quantitative' />
+      <column caption='Oil Co2 (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[oil_co2 (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
+      <column caption='Oil Co2' datatype='real' name='[oil_co2]' role='measure' type='quantitative' />
+      <column caption='Oil Co2 Normalized' datatype='real' hidden='true' name='[oil_co2_normalized]' role='measure' type='quantitative' />
+      <column caption='Oil Share (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[oil_share (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
+      <column caption='Oil Share Normalized' datatype='real' hidden='true' name='[oil_share_normalized]' role='measure' type='quantitative' />
+      <column caption='Population (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[population (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
+      <column caption='Population' datatype='real' name='[population]' role='measure' type='quantitative' />
+      <column caption='Population Normalized' datatype='real' hidden='true' name='[population_normalized]' role='measure' type='quantitative' />
+      <column-instance column='[__tableau_internal_object_id__].[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[cluster_5_name]' derivation='None' name='[none:cluster_5_name:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_3923479760490627072]' derivation='User' name='[pcto:usr:Calculation_3923479760490627072:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Columns' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[Calculation_3923479760490881025]' derivation='User' name='[pcto:usr:Calculation_3923479760490881025:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Columns' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[Calculation_3923479760490979330]' derivation='User' name='[pcto:usr:Calculation_3923479760490979330:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Columns' type='PctTotal' />
+      </column-instance>
+      <column-instance column='[cement_co2]' derivation='Sum' name='[sum:cement_co2:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[cluster_5]' derivation='Sum' name='[sum:cluster_5:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[cluster_8]' derivation='Sum' name='[sum:cluster_8:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[co2_normalized]' derivation='Sum' name='[sum:co2_normalized:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[co2_per_capita_normalized]' derivation='Sum' name='[sum:co2_per_capita_normalized:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[coal_co2]' derivation='Sum' name='[sum:coal_co2:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[coal_co2_normalized]' derivation='Sum' name='[sum:coal_co2_normalized:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[gas_co2]' derivation='Sum' name='[sum:gas_co2:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[gas_co2_normalized]' derivation='Sum' name='[sum:gas_co2_normalized:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[land_use_change_co2]' derivation='Sum' name='[sum:land_use_change_co2:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[oil_co2]' derivation='Sum' name='[sum:oil_co2:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[oil_co2_normalized]' derivation='Sum' name='[sum:oil_co2_normalized:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[population]' derivation='Sum' name='[sum:population:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_3923479760490627072]' derivation='User' name='[usr:Calculation_3923479760490627072:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_3923479760490881025]' derivation='User' name='[usr:Calculation_3923479760490881025:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_3923479760490979330]' derivation='User' name='[usr:Calculation_3923479760490979330:qk]' pivot='key' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/38/rbb9c58x57z0q20kbt7l13pr0000gn/T/tableau-temp/#TableauTemp_13ssyip1d5vy7t1f89pbt02e9daa.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>country</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[country]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>country</remote-alias>
+              <ordinal>0</ordinal>
+              <family>emissions_clusters_for_tableau.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>228</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>iso_code</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[iso_code]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>iso_code</remote-alias>
+              <ordinal>1</ordinal>
+              <family>emissions_clusters_for_tableau.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>225</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>coal_co2</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[coal_co2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>coal_co2</remote-alias>
+              <ordinal>2</ordinal>
+              <family>emissions_clusters_for_tableau.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>119</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>oil_co2</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[oil_co2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>oil_co2</remote-alias>
+              <ordinal>3</ordinal>
+              <family>emissions_clusters_for_tableau.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>209</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>gas_co2</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[gas_co2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>gas_co2</remote-alias>
+              <ordinal>4</ordinal>
+              <family>emissions_clusters_for_tableau.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>120</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cement_co2</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[cement_co2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>cement_co2</remote-alias>
+              <ordinal>5</ordinal>
+              <family>emissions_clusters_for_tableau.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>148</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>land_use_change_co2</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[land_use_change_co2]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>land_use_change_co2</remote-alias>
+              <ordinal>6</ordinal>
+              <family>emissions_clusters_for_tableau.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>155</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>population</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[population]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>population</remote-alias>
+              <ordinal>7</ordinal>
+              <family>emissions_clusters_for_tableau.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>221</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cluster_5</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[cluster_5]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>cluster_5</remote-alias>
+              <ordinal>8</ordinal>
+              <family>emissions_clusters_for_tableau.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cluster_5_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[cluster_5_name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>cluster_5_name</remote-alias>
+              <ordinal>9</ordinal>
+              <family>emissions_clusters_for_tableau.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cluster_8</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[cluster_8]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>cluster_8</remote-alias>
+              <ordinal>10</ordinal>
+              <family>emissions_clusters_for_tableau.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cluster_8_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[cluster_8_name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>cluster_8_name</remote-alias>
+              <ordinal>11</ordinal>
+              <family>emissions_clusters_for_tableau.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Pivot Field Names</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Pivot Field Names]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Pivot Field Names</remote-alias>
+              <ordinal>12</ordinal>
+              <family>Pivot</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Pivot Field Values</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Pivot Field Values]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Pivot Field Values</remote-alias>
+              <ordinal>13</ordinal>
+              <family>Pivot</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>977</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' palette='tableau20_10_0' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:co2:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:co2_normalized:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:population:qk]&quot;</bucket>
+            </map>
+            <map to='#54585a'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[usr:Calculation_3923479760490627072:qk]&quot;</bucket>
+            </map>
+            <map to='#59371f'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[usr:Calculation_3923479760490881025:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:oil_co2_normalized:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:gas_co2_normalized:qk]&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:coal_share:qk]&quot;</bucket>
+            </map>
+            <map to='#7f7f7f'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[pcto:usr:Calculation_3923479760490881025:qk]&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:co2_per_capita:qk]&quot;</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[pcto:usr:Calculation_3923479760490627072:qk]&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:cement_co2:qk]&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:oil_co2:qk]&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[pcto:usr:Calculation_3923479760490979330:qk]&quot;</bucket>
+            </map>
+            <map to='#a6d1e8'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[usr:Calculation_3923479760490979330:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:gas_share:qk]&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:cluster_5:qk]&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[__tableau_internal_object_id__].[cnt:emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42:qk]&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:cumulative_co2:qk]&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:land_use_change_co2:qk]&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:oil_share:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:coal_co2_normalized:qk]&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:cluster_8:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:co2_per_capita_normalized:qk]&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:gas_co2:qk]&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:coal_co2:qk]&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:cluster_5_name:nk]' palette='tableau20_10_0' type='palette'>
+            <map to='#3182bd'>
+              <bucket>&quot;Moderate Mixed-Source Emitters&quot;</bucket>
+            </map>
+            <map to='#756bb1'>
+              <bucket>&quot;Gas-Dominant High Per-Capita Emitters&quot;</bucket>
+            </map>
+            <map to='#993404'>
+              <bucket>&quot;Coal-Dependent Heavy Emitters&quot;</bucket>
+            </map>
+            <map to='#a1b91d'>
+              <bucket>&quot;Oil-Dependent Low-Impact Economies&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot;Exceptional Emitter: Unique Emissions Profile&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='emissions_clusters_for_tableau.csv' id='emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42'>
+            <properties context=''>
+              <relation name='Pivot' type='pivot'>
+                <columns>
+                  <column datatype='string' name='Pivot Field Names' />
+                  <column datatype='real' name='Pivot Field Values' />
+                </columns>
+                <tag name='Pivot Field Names'>
+                  <value name='[Co2 Per Capita]' />
+                  <value name='[Coal Share]' />
+                  <value name='[Gas Share]' />
+                  <value name='[Oil Share]' />
+                  <value name='[Co2]' />
+                  <value name='[Cumulative Co2]' />
+                </tag>
+                <groups>
+                  <group name='Pivot Field Values'>
+                    <field name='[emissions_clusters_for_tableau.csv].[co2_per_capita]' />
+                    <field name='[emissions_clusters_for_tableau.csv].[coal_share]' />
+                    <field name='[emissions_clusters_for_tableau.csv].[gas_share]' />
+                    <field name='[emissions_clusters_for_tableau.csv].[oil_share]' />
+                    <field name='[emissions_clusters_for_tableau.csv].[co2]' />
+                    <field name='[emissions_clusters_for_tableau.csv].[cumulative_co2]' />
+                  </group>
+                </groups>
+                <relation connection='textscan.09ffmb60ra56x312k6xc40xsnzsq (copy)' name='emissions_clusters_for_tableau.csv' table='[emissions_clusters_for_tableau#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                    <column datatype='string' name='country' ordinal='0' />
+                    <column datatype='string' name='iso_code' ordinal='1' />
+                    <column datatype='real' name='co2' ordinal='2' />
+                    <column datatype='real' name='co2_per_capita' ordinal='3' />
+                    <column datatype='real' name='coal_co2' ordinal='4' />
+                    <column datatype='real' name='oil_co2' ordinal='5' />
+                    <column datatype='real' name='gas_co2' ordinal='6' />
+                    <column datatype='real' name='cement_co2' ordinal='7' />
+                    <column datatype='real' name='cumulative_co2' ordinal='8' />
+                    <column datatype='real' name='land_use_change_co2' ordinal='9' />
+                    <column datatype='real' name='population' ordinal='10' />
+                    <column datatype='real' name='coal_share' ordinal='11' />
+                    <column datatype='real' name='oil_share' ordinal='12' />
+                    <column datatype='real' name='gas_share' ordinal='13' />
+                    <column datatype='integer' name='cluster_5' ordinal='14' />
+                    <column datatype='string' name='cluster_5_name' ordinal='15' />
+                    <column datatype='integer' name='cluster_8' ordinal='16' />
+                    <column datatype='string' name='cluster_8_name' ordinal='17' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
     <datasource caption='emissions_clusters_for_tableau' inline='true' name='federated.0yo8jcp1jdqi3313bk0x51wkeqwr' version='18.1'>
       <connection class='federated'>
         <named-connections>
           <named-connection caption='emissions_clusters_for_tableau' name='textscan.09ffmb60ra56x312k6xc40xsnzsq'>
             <connection class='textscan' directory='/Users/samabrams/Data Analysis Projects/CO2_Emissions_Project/02 Data/Prepared Data' filename='emissions_clusters_for_tableau.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='co2_time_series_complete' name='textscan.0a4p98e06omx9u1bg55q707b8tdl'>
+            <connection class='textscan' directory='/Users/samabrams/Data Analysis Projects/CO2_Emissions_Project/02 Data/Prepared Data' filename='co2_time_series_complete.csv' password='' server='' workgroup-auth-mode='as-is' />
           </named-connection>
         </named-connections>
         <relation connection='textscan.09ffmb60ra56x312k6xc40xsnzsq' name='emissions_clusters_for_tableau.csv' table='[emissions_clusters_for_tableau#csv]' type='table'>
@@ -308,6 +1015,9 @@
       <aliases enabled='yes' />
       <column datatype='string' name='[:Measure Names]' role='dimension' type='nominal'>
         <aliases>
+          <alias key='&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[avg:Calculation_623185660731011072:qk]&quot;' value='Coal Share' />
+          <alias key='&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[avg:Calculation_623185660731109377:qk]&quot;' value='Oil Share' />
+          <alias key='&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[avg:Calculation_623185660731158530:qk]&quot;' value='Gas Share' />
           <alias key='&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[avg:coal_co2:qk]&quot;' value='Coal Emissions' />
           <alias key='&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[avg:gas_co2:qk]&quot;' value='Gas Emissions' />
           <alias key='&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[avg:oil_co2:qk]&quot;' value='Oil Emissions' />
@@ -417,10 +1127,12 @@
       <column-instance column='[co2_per_capita]' derivation='Avg' name='[avg:co2_per_capita:qk]' pivot='key' type='quantitative' />
       <column-instance column='[coal_co2]' derivation='Avg' name='[avg:coal_co2:qk]' pivot='key' type='quantitative' />
       <column-instance column='[coal_share]' derivation='Avg' name='[avg:coal_share:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[cumulative_co2]' derivation='Avg' name='[avg:cumulative_co2:qk]' pivot='key' type='quantitative' />
       <column-instance column='[gas_co2]' derivation='Avg' name='[avg:gas_co2:qk]' pivot='key' type='quantitative' />
       <column-instance column='[oil_co2]' derivation='Avg' name='[avg:oil_co2:qk]' pivot='key' type='quantitative' />
       <column-instance column='[oil_share]' derivation='Avg' name='[avg:oil_share:qk]' pivot='key' type='quantitative' />
       <column-instance column='[population]' derivation='Avg' name='[avg:population:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_2123939864289161216]' derivation='None' name='[none:Calculation_2123939864289161216:nk]' pivot='key' type='nominal' />
       <column-instance column='[cluster_5_name]' derivation='None' name='[none:cluster_5_name:nk]' pivot='key' type='nominal' />
       <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
       <column-instance column='[Calculation_3923479760490627072]' derivation='User' name='[pcto:usr:Calculation_3923479760490627072:qk]' pivot='key' type='quantitative'>
@@ -461,7 +1173,7 @@
         <groupfilter function='member' level='[cluster_5_name]' member='&quot;Moderate Mixed-Source Emitters&quot;' />
       </group>
       <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/38/rbb9c58x57z0q20kbt7l13pr0000gn/T/tableau-temp/#TableauTemp_0w28xq40i98k7e19rpo9g1qoj5mu.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/29/2025 03:01:24 PM' username='tableau_internal_user'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/38/rbb9c58x57z0q20kbt7l13pr0000gn/T/tableau-temp/#TableauTemp_0wl2sf602s1xn617ufppl18uu60i.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
           <relation name='Extract' table='[Extract].[Extract]' type='table' />
           <metadata-records>
             <metadata-record class='column'>
@@ -477,7 +1189,6 @@
               <approx-count>228</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>iso_code</remote-name>
@@ -492,7 +1203,6 @@
               <approx-count>225</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>co2</remote-name>
@@ -506,7 +1216,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>210</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>co2_per_capita</remote-name>
@@ -520,7 +1229,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>209</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>coal_co2</remote-name>
@@ -534,7 +1242,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>119</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>oil_co2</remote-name>
@@ -548,7 +1255,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>209</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>gas_co2</remote-name>
@@ -562,7 +1268,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>120</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>cement_co2</remote-name>
@@ -576,7 +1281,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>148</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>cumulative_co2</remote-name>
@@ -590,7 +1294,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>215</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>land_use_change_co2</remote-name>
@@ -604,7 +1307,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>155</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>population</remote-name>
@@ -618,7 +1320,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>221</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>coal_share</remote-name>
@@ -632,7 +1333,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>126</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>oil_share</remote-name>
@@ -646,7 +1346,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>151</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>gas_share</remote-name>
@@ -660,7 +1359,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>121</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>cluster_5</remote-name>
@@ -674,7 +1372,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>cluster_5_name</remote-name>
@@ -689,7 +1386,6 @@
               <approx-count>5</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>cluster_8</remote-name>
@@ -703,7 +1399,6 @@
               <aggregation>Sum</aggregation>
               <approx-count>8</approx-count>
               <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
             </metadata-record>
             <metadata-record class='column'>
               <remote-name>cluster_8_name</remote-name>
@@ -718,7 +1413,6 @@
               <approx-count>8</approx-count>
               <contains-null>true</contains-null>
               <collation flag='0' name='LEN_RUS' />
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
             </metadata-record>
           </metadata-records>
         </connection>
@@ -1501,6 +2195,9 @@
               <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[__tableau_internal_object_id__].[cnt:emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42:qk]&quot;</bucket>
             </map>
             <map to='#d37295'>
+              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[avg:cumulative_co2:qk]&quot;</bucket>
+            </map>
+            <map to='#d37295'>
               <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:cumulative_co2:qk]&quot;</bucket>
             </map>
             <map to='#d4a6c8'>
@@ -1554,6 +2251,49 @@
               <bucket>&quot;Exceptional Emitter: Unique Emissions Profile&quot;</bucket>
             </map>
           </encoding>
+          <encoding attr='shape' field='[none:country:nk]' type='shape'>
+            <map to='asterisk'>
+              <bucket>&quot;United Kingdom&quot;</bucket>
+            </map>
+            <map to='circle'>
+              <bucket>&quot;United States&quot;</bucket>
+            </map>
+            <map to='diamond'>
+              <bucket>&quot;Japan&quot;</bucket>
+            </map>
+            <map to='down-triangle'>
+              <bucket>&quot;France&quot;</bucket>
+            </map>
+            <map to='left-triangle'>
+              <bucket>&quot;Canada&quot;</bucket>
+            </map>
+            <map to='plus'>
+              <bucket>&quot;Russia&quot;</bucket>
+            </map>
+            <map to='right-triangle'>
+              <bucket>&quot;Ukraine&quot;</bucket>
+            </map>
+            <map to='square'>
+              <bucket>&quot;China&quot;</bucket>
+            </map>
+            <map to='times'>
+              <bucket>&quot;Germany&quot;</bucket>
+            </map>
+            <map to='triangle'>
+              <bucket>&quot;India&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_2123939864289161216:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Gas&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Coal&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Oil&quot;</bucket>
+            </map>
+          </encoding>
         </style-rule>
       </style>
       <semantic-values>
@@ -1584,724 +2324,6 @@
                   <column datatype='integer' name='cluster_8' ordinal='16' />
                   <column datatype='string' name='cluster_8_name' ordinal='17' />
                 </columns>
-              </relation>
-            </properties>
-            <properties context='extract'>
-              <relation name='Extract' table='[Extract].[Extract]' type='table' />
-            </properties>
-          </object>
-        </objects>
-      </object-graph>
-    </datasource>
-    <datasource caption='emissions_clusters_for_tableau (copy)' inline='true' name='federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)' version='18.1'>
-      <connection class='federated'>
-        <named-connections>
-          <named-connection caption='emissions_clusters_for_tableau' name='textscan.09ffmb60ra56x312k6xc40xsnzsq (copy)'>
-            <connection class='textscan' directory='/Users/samabrams/Data Analysis Projects/CO2_Emissions_Project/02 Data/Prepared Data' filename='emissions_clusters_for_tableau.csv' password='' server='' workgroup-auth-mode='as-is' />
-          </named-connection>
-        </named-connections>
-        <relation name='Pivot' type='pivot'>
-          <columns>
-            <column datatype='string' name='Pivot Field Names' />
-            <column datatype='real' name='Pivot Field Values' />
-          </columns>
-          <tag name='Pivot Field Names'>
-            <value name='[Co2 Per Capita]' />
-            <value name='[Coal Share]' />
-            <value name='[Gas Share]' />
-            <value name='[Oil Share]' />
-            <value name='[Co2]' />
-            <value name='[Cumulative Co2]' />
-          </tag>
-          <groups>
-            <group name='Pivot Field Values'>
-              <field name='[emissions_clusters_for_tableau.csv].[co2_per_capita]' />
-              <field name='[emissions_clusters_for_tableau.csv].[coal_share]' />
-              <field name='[emissions_clusters_for_tableau.csv].[gas_share]' />
-              <field name='[emissions_clusters_for_tableau.csv].[oil_share]' />
-              <field name='[emissions_clusters_for_tableau.csv].[co2]' />
-              <field name='[emissions_clusters_for_tableau.csv].[cumulative_co2]' />
-            </group>
-          </groups>
-          <relation connection='textscan.09ffmb60ra56x312k6xc40xsnzsq (copy)' name='emissions_clusters_for_tableau.csv' table='[emissions_clusters_for_tableau#csv]' type='table'>
-            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-              <column datatype='string' name='country' ordinal='0' />
-              <column datatype='string' name='iso_code' ordinal='1' />
-              <column datatype='real' name='co2' ordinal='2' />
-              <column datatype='real' name='co2_per_capita' ordinal='3' />
-              <column datatype='real' name='coal_co2' ordinal='4' />
-              <column datatype='real' name='oil_co2' ordinal='5' />
-              <column datatype='real' name='gas_co2' ordinal='6' />
-              <column datatype='real' name='cement_co2' ordinal='7' />
-              <column datatype='real' name='cumulative_co2' ordinal='8' />
-              <column datatype='real' name='land_use_change_co2' ordinal='9' />
-              <column datatype='real' name='population' ordinal='10' />
-              <column datatype='real' name='coal_share' ordinal='11' />
-              <column datatype='real' name='oil_share' ordinal='12' />
-              <column datatype='real' name='gas_share' ordinal='13' />
-              <column datatype='integer' name='cluster_5' ordinal='14' />
-              <column datatype='string' name='cluster_5_name' ordinal='15' />
-              <column datatype='integer' name='cluster_8' ordinal='16' />
-              <column datatype='string' name='cluster_8_name' ordinal='17' />
-            </columns>
-          </relation>
-        </relation>
-        <metadata-records>
-          <metadata-record class='capability'>
-            <remote-name />
-            <remote-type>0</remote-type>
-            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
-            <remote-alias />
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
-              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
-              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
-              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
-              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
-              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>country</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[country]</local-name>
-            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
-            <remote-alias>country</remote-alias>
-            <ordinal>0</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>iso_code</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[iso_code]</local-name>
-            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
-            <remote-alias>iso_code</remote-alias>
-            <ordinal>1</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>coal_co2</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[coal_co2]</local-name>
-            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
-            <remote-alias>coal_co2</remote-alias>
-            <ordinal>2</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>oil_co2</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[oil_co2]</local-name>
-            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
-            <remote-alias>oil_co2</remote-alias>
-            <ordinal>3</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>gas_co2</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[gas_co2]</local-name>
-            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
-            <remote-alias>gas_co2</remote-alias>
-            <ordinal>4</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>cement_co2</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[cement_co2]</local-name>
-            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
-            <remote-alias>cement_co2</remote-alias>
-            <ordinal>5</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>land_use_change_co2</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[land_use_change_co2]</local-name>
-            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
-            <remote-alias>land_use_change_co2</remote-alias>
-            <ordinal>6</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>population</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[population]</local-name>
-            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
-            <remote-alias>population</remote-alias>
-            <ordinal>7</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>cluster_5</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[cluster_5]</local-name>
-            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
-            <remote-alias>cluster_5</remote-alias>
-            <ordinal>8</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>cluster_5_name</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[cluster_5_name]</local-name>
-            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
-            <remote-alias>cluster_5_name</remote-alias>
-            <ordinal>9</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>cluster_8</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[cluster_8]</local-name>
-            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
-            <remote-alias>cluster_8</remote-alias>
-            <ordinal>10</ordinal>
-            <local-type>integer</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>cluster_8_name</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[cluster_8_name]</local-name>
-            <parent-name>[emissions_clusters_for_tableau.csv]</parent-name>
-            <remote-alias>cluster_8_name</remote-alias>
-            <ordinal>11</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <scale>1</scale>
-            <width>1073741823</width>
-            <contains-null>true</contains-null>
-            <collation flag='0' name='LEN_RUS' />
-            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Pivot Field Names</remote-name>
-            <remote-type>129</remote-type>
-            <local-name>[Pivot Field Names]</local-name>
-            <parent-name>[Pivot]</parent-name>
-            <remote-alias>Pivot Field Names</remote-alias>
-            <ordinal>12</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>Pivot Field Values</remote-name>
-            <remote-type>5</remote-type>
-            <local-name>[Pivot Field Values]</local-name>
-            <parent-name>[Pivot]</parent-name>
-            <remote-alias>Pivot Field Values</remote-alias>
-            <ordinal>13</ordinal>
-            <local-type>real</local-type>
-            <aggregation>Sum</aggregation>
-            <contains-null>true</contains-null>
-            <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-          </metadata-record>
-        </metadata-records>
-      </connection>
-      <aliases enabled='yes' />
-      <column caption='Dominant Energy Source' datatype='string' name='[Calculation_2123939864289161216]' role='dimension' type='nominal'>
-        <calculation class='tableau' formula='IF [coal_share] &gt; [oil_share] AND [coal_share] &gt; [gas_share] THEN &apos;Coal&apos;&#10;ELSEIF [oil_share] &gt; [coal_share] AND [oil_share] &gt; [gas_share] THEN &apos;Oil&apos;&#10;ELSE &apos;Gas&apos;&#10;END' />
-      </column>
-      <column caption='Coal Percentage' datatype='real' name='[Calculation_3923479760490627072]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='AVG([coal_share])*100' />
-      </column>
-      <column caption='Oil Percentage' datatype='real' name='[Calculation_3923479760490881025]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='AVG([oil_share])*100' />
-      </column>
-      <column caption='Gas Percentage' datatype='real' name='[Calculation_3923479760490979330]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='AVG([gas_share])*100' />
-      </column>
-      <column caption='USA vs. Global' datatype='string' name='[Calculation_4396850302678732800]' role='measure' type='nominal'>
-        <calculation class='tableau' formula='IF ATTR([country]) = &quot;United States&quot; THEN &quot;USA&quot; ELSE &quot;Global Average&quot; END' />
-      </column>
-      <column caption='Characteristic' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal' />
-      <column caption='emissions_clusters_for_tableau.csv' datatype='table' name='[__tableau_internal_object_id__].[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]' role='measure' type='quantitative' />
-      <column caption='emissions_clusters_normalized.csv' datatype='table' hidden='true' name='[__tableau_internal_object_id__].[emissions_clusters_normalized.csv_AAD5FEFE3A4B410CA7D4E6B5BDA83AE6]' role='measure' type='quantitative' />
-      <column caption='Cement Co2 (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[cement_co2 (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
-      <column caption='Cement Co2' datatype='real' name='[cement_co2]' role='measure' type='quantitative' />
-      <column caption='Cement Co2 Normalized' datatype='real' hidden='true' name='[cement_co2_normalized]' role='measure' type='quantitative' />
-      <column caption='Cluster 5 (Emissions Clusters Normalized.Csv)' datatype='integer' hidden='true' name='[cluster_5 (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
-      <column caption='Cluster 5' datatype='integer' name='[cluster_5]' role='measure' type='quantitative' />
-      <column caption='Cluster 5 Name (Emissions Clusters Normalized.Csv)' datatype='string' hidden='true' name='[cluster_5_name (emissions_clusters_normalized.csv)]' role='dimension' type='nominal' />
-      <column caption='Cluster 5 Name' datatype='string' name='[cluster_5_name]' role='dimension' type='nominal'>
-        <aliases>
-          <alias key='&quot;Exceptional Emitter: Unique Emissions Profile&quot;' value='United States' />
-        </aliases>
-      </column>
-      <column caption='Cluster 8 (Emissions Clusters Normalized.Csv)' datatype='integer' hidden='true' name='[cluster_8 (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
-      <column caption='Cluster 8' datatype='integer' name='[cluster_8]' role='measure' type='quantitative' />
-      <column caption='Cluster 8 Name (Emissions Clusters Normalized.Csv)' datatype='string' hidden='true' name='[cluster_8_name (emissions_clusters_normalized.csv)]' role='dimension' type='nominal' />
-      <column caption='Cluster 8 Name' datatype='string' name='[cluster_8_name]' role='dimension' type='nominal' />
-      <column caption='Co2 (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[co2 (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
-      <column caption='Co2 Normalized' datatype='real' hidden='true' name='[co2_normalized]' role='measure' type='quantitative' />
-      <column caption='Co2 Per Capita (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[co2_per_capita (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
-      <column caption='Co2 Per Capita Normalized' datatype='real' hidden='true' name='[co2_per_capita_normalized]' role='measure' type='quantitative' />
-      <column caption='Coal Co2 (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[coal_co2 (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
-      <column caption='Coal Co2' datatype='real' name='[coal_co2]' role='measure' type='quantitative' />
-      <column caption='Coal Co2 Normalized' datatype='real' hidden='true' name='[coal_co2_normalized]' role='measure' type='quantitative' />
-      <column caption='Coal Share (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[coal_share (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
-      <column caption='Coal Share Normalized' datatype='real' hidden='true' name='[coal_share_normalized]' role='measure' type='quantitative' />
-      <column caption='Country (Emissions Clusters Normalized.Csv)' datatype='string' hidden='true' name='[country (emissions_clusters_normalized.csv)]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
-      <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
-      <column caption='Cumulative Co2 (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[cumulative_co2 (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
-      <column caption='Cumulative Co2 Normalized' datatype='real' hidden='true' name='[cumulative_co2_normalized]' role='measure' type='quantitative' />
-      <column caption='Gas Co2 (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[gas_co2 (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
-      <column caption='Gas Co2' datatype='real' name='[gas_co2]' role='measure' type='quantitative' />
-      <column caption='Gas Co2 Normalized' datatype='real' hidden='true' name='[gas_co2_normalized]' role='measure' type='quantitative' />
-      <column caption='Gas Share (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[gas_share (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
-      <column caption='Gas Share Normalized' datatype='real' hidden='true' name='[gas_share_normalized]' role='measure' type='quantitative' />
-      <column caption='Iso Code (Emissions Clusters Normalized.Csv)' datatype='string' hidden='true' name='[iso_code (emissions_clusters_normalized.csv)]' role='dimension' type='nominal' />
-      <column caption='Iso Code' datatype='string' name='[iso_code]' role='dimension' type='nominal' />
-      <column caption='Land Use Change Co2 (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[land_use_change_co2 (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
-      <column caption='Land Use Change Co2' datatype='real' name='[land_use_change_co2]' role='measure' type='quantitative' />
-      <column caption='Land Use Change Co2 Normalized' datatype='real' hidden='true' name='[land_use_change_co2_normalized]' role='measure' type='quantitative' />
-      <column caption='Oil Co2 (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[oil_co2 (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
-      <column caption='Oil Co2' datatype='real' name='[oil_co2]' role='measure' type='quantitative' />
-      <column caption='Oil Co2 Normalized' datatype='real' hidden='true' name='[oil_co2_normalized]' role='measure' type='quantitative' />
-      <column caption='Oil Share (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[oil_share (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
-      <column caption='Oil Share Normalized' datatype='real' hidden='true' name='[oil_share_normalized]' role='measure' type='quantitative' />
-      <column caption='Population (Emissions Clusters Normalized.Csv)' datatype='real' hidden='true' name='[population (emissions_clusters_normalized.csv)]' role='measure' type='quantitative' />
-      <column caption='Population' datatype='real' name='[population]' role='measure' type='quantitative' />
-      <column caption='Population Normalized' datatype='real' hidden='true' name='[population_normalized]' role='measure' type='quantitative' />
-      <column-instance column='[__tableau_internal_object_id__].[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[cluster_5_name]' derivation='None' name='[none:cluster_5_name:nk]' pivot='key' type='nominal' />
-      <column-instance column='[Calculation_3923479760490627072]' derivation='User' name='[pcto:usr:Calculation_3923479760490627072:qk]' pivot='key' type='quantitative'>
-        <table-calc ordering-type='Columns' type='PctTotal' />
-      </column-instance>
-      <column-instance column='[Calculation_3923479760490881025]' derivation='User' name='[pcto:usr:Calculation_3923479760490881025:qk]' pivot='key' type='quantitative'>
-        <table-calc ordering-type='Columns' type='PctTotal' />
-      </column-instance>
-      <column-instance column='[Calculation_3923479760490979330]' derivation='User' name='[pcto:usr:Calculation_3923479760490979330:qk]' pivot='key' type='quantitative'>
-        <table-calc ordering-type='Columns' type='PctTotal' />
-      </column-instance>
-      <column-instance column='[cement_co2]' derivation='Sum' name='[sum:cement_co2:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[cluster_5]' derivation='Sum' name='[sum:cluster_5:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[cluster_8]' derivation='Sum' name='[sum:cluster_8:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[co2_normalized]' derivation='Sum' name='[sum:co2_normalized:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[co2_per_capita_normalized]' derivation='Sum' name='[sum:co2_per_capita_normalized:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[coal_co2]' derivation='Sum' name='[sum:coal_co2:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[coal_co2_normalized]' derivation='Sum' name='[sum:coal_co2_normalized:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[gas_co2]' derivation='Sum' name='[sum:gas_co2:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[gas_co2_normalized]' derivation='Sum' name='[sum:gas_co2_normalized:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[land_use_change_co2]' derivation='Sum' name='[sum:land_use_change_co2:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[oil_co2]' derivation='Sum' name='[sum:oil_co2:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[oil_co2_normalized]' derivation='Sum' name='[sum:oil_co2_normalized:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[population]' derivation='Sum' name='[sum:population:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[Calculation_3923479760490627072]' derivation='User' name='[usr:Calculation_3923479760490627072:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[Calculation_3923479760490881025]' derivation='User' name='[usr:Calculation_3923479760490881025:qk]' pivot='key' type='quantitative' />
-      <column-instance column='[Calculation_3923479760490979330]' derivation='User' name='[usr:Calculation_3923479760490979330:qk]' pivot='key' type='quantitative' />
-      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
-        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/38/rbb9c58x57z0q20kbt7l13pr0000gn/T/tableau-temp/#TableauTemp_13ssyip1d5vy7t1f89pbt02e9daa.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
-          <relation name='Extract' table='[Extract].[Extract]' type='table' />
-          <metadata-records>
-            <metadata-record class='column'>
-              <remote-name>country</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[country]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>country</remote-alias>
-              <ordinal>0</ordinal>
-              <family>emissions_clusters_for_tableau.csv</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>228</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LEN_RUS' />
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>iso_code</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[iso_code]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>iso_code</remote-alias>
-              <ordinal>1</ordinal>
-              <family>emissions_clusters_for_tableau.csv</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>225</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LEN_RUS' />
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>coal_co2</remote-name>
-              <remote-type>5</remote-type>
-              <local-name>[coal_co2]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>coal_co2</remote-alias>
-              <ordinal>2</ordinal>
-              <family>emissions_clusters_for_tableau.csv</family>
-              <local-type>real</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>119</approx-count>
-              <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>oil_co2</remote-name>
-              <remote-type>5</remote-type>
-              <local-name>[oil_co2]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>oil_co2</remote-alias>
-              <ordinal>3</ordinal>
-              <family>emissions_clusters_for_tableau.csv</family>
-              <local-type>real</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>209</approx-count>
-              <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>gas_co2</remote-name>
-              <remote-type>5</remote-type>
-              <local-name>[gas_co2]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>gas_co2</remote-alias>
-              <ordinal>4</ordinal>
-              <family>emissions_clusters_for_tableau.csv</family>
-              <local-type>real</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>120</approx-count>
-              <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>cement_co2</remote-name>
-              <remote-type>5</remote-type>
-              <local-name>[cement_co2]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>cement_co2</remote-alias>
-              <ordinal>5</ordinal>
-              <family>emissions_clusters_for_tableau.csv</family>
-              <local-type>real</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>148</approx-count>
-              <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>land_use_change_co2</remote-name>
-              <remote-type>5</remote-type>
-              <local-name>[land_use_change_co2]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>land_use_change_co2</remote-alias>
-              <ordinal>6</ordinal>
-              <family>emissions_clusters_for_tableau.csv</family>
-              <local-type>real</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>155</approx-count>
-              <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>population</remote-name>
-              <remote-type>5</remote-type>
-              <local-name>[population]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>population</remote-alias>
-              <ordinal>7</ordinal>
-              <family>emissions_clusters_for_tableau.csv</family>
-              <local-type>real</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>221</approx-count>
-              <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>cluster_5</remote-name>
-              <remote-type>20</remote-type>
-              <local-name>[cluster_5]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>cluster_5</remote-alias>
-              <ordinal>8</ordinal>
-              <family>emissions_clusters_for_tableau.csv</family>
-              <local-type>integer</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>5</approx-count>
-              <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>cluster_5_name</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[cluster_5_name]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>cluster_5_name</remote-alias>
-              <ordinal>9</ordinal>
-              <family>emissions_clusters_for_tableau.csv</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>5</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LEN_RUS' />
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>cluster_8</remote-name>
-              <remote-type>20</remote-type>
-              <local-name>[cluster_8]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>cluster_8</remote-alias>
-              <ordinal>10</ordinal>
-              <family>emissions_clusters_for_tableau.csv</family>
-              <local-type>integer</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>8</approx-count>
-              <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>cluster_8_name</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[cluster_8_name]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>cluster_8_name</remote-alias>
-              <ordinal>11</ordinal>
-              <family>emissions_clusters_for_tableau.csv</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>8</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='LEN_RUS' />
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>Pivot Field Names</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[Pivot Field Names]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>Pivot Field Names</remote-alias>
-              <ordinal>12</ordinal>
-              <family>Pivot</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>6</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='0' name='binary' />
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>Pivot Field Values</remote-name>
-              <remote-type>5</remote-type>
-              <local-name>[Pivot Field Values]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>Pivot Field Values</remote-alias>
-              <ordinal>13</ordinal>
-              <family>Pivot</family>
-              <local-type>real</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>977</approx-count>
-              <contains-null>true</contains-null>
-              <object-id>[emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42]</object-id>
-            </metadata-record>
-          </metadata-records>
-        </connection>
-      </extract>
-      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
-      <style>
-        <style-rule element='mark'>
-          <encoding attr='color' field='[:Measure Names]' palette='tableau20_10_0' type='palette'>
-            <map to='#499894'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:co2:qk]&quot;</bucket>
-            </map>
-            <map to='#4e79a7'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:co2_normalized:qk]&quot;</bucket>
-            </map>
-            <map to='#4e79a7'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:population:qk]&quot;</bucket>
-            </map>
-            <map to='#54585a'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[usr:Calculation_3923479760490627072:qk]&quot;</bucket>
-            </map>
-            <map to='#59371f'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[usr:Calculation_3923479760490881025:qk]&quot;</bucket>
-            </map>
-            <map to='#59a14f'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:oil_co2_normalized:qk]&quot;</bucket>
-            </map>
-            <map to='#76b7b2'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:gas_co2_normalized:qk]&quot;</bucket>
-            </map>
-            <map to='#79706e'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:coal_share:qk]&quot;</bucket>
-            </map>
-            <map to='#7f7f7f'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[pcto:usr:Calculation_3923479760490881025:qk]&quot;</bucket>
-            </map>
-            <map to='#86bcb6'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:co2_per_capita:qk]&quot;</bucket>
-            </map>
-            <map to='#8c564b'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[pcto:usr:Calculation_3923479760490627072:qk]&quot;</bucket>
-            </map>
-            <map to='#8cd17d'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:cement_co2:qk]&quot;</bucket>
-            </map>
-            <map to='#9d7660'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:oil_co2:qk]&quot;</bucket>
-            </map>
-            <map to='#a0cbe8'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[pcto:usr:Calculation_3923479760490979330:qk]&quot;</bucket>
-            </map>
-            <map to='#a6d1e8'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[usr:Calculation_3923479760490979330:qk]&quot;</bucket>
-            </map>
-            <map to='#b07aa1'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:gas_share:qk]&quot;</bucket>
-            </map>
-            <map to='#b6992d'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:cluster_5:qk]&quot;</bucket>
-            </map>
-            <map to='#bab0ac'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[__tableau_internal_object_id__].[cnt:emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42:qk]&quot;</bucket>
-            </map>
-            <map to='#d37295'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:cumulative_co2:qk]&quot;</bucket>
-            </map>
-            <map to='#d4a6c8'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:land_use_change_co2:qk]&quot;</bucket>
-            </map>
-            <map to='#d7b5a6'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:oil_share:qk]&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:coal_co2_normalized:qk]&quot;</bucket>
-            </map>
-            <map to='#f1ce63'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:cluster_8:qk]&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:co2_per_capita_normalized:qk]&quot;</bucket>
-            </map>
-            <map to='#fabfd2'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:gas_co2:qk]&quot;</bucket>
-            </map>
-            <map to='#ff9d9a'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)].[sum:coal_co2:qk]&quot;</bucket>
-            </map>
-            <map to='#ffbe7d'>
-              <bucket>&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr (copy)]&quot;</bucket>
-            </map>
-          </encoding>
-          <encoding attr='color' field='[none:cluster_5_name:nk]' palette='tableau20_10_0' type='palette'>
-            <map to='#3182bd'>
-              <bucket>&quot;Moderate Mixed-Source Emitters&quot;</bucket>
-            </map>
-            <map to='#756bb1'>
-              <bucket>&quot;Gas-Dominant High Per-Capita Emitters&quot;</bucket>
-            </map>
-            <map to='#993404'>
-              <bucket>&quot;Coal-Dependent Heavy Emitters&quot;</bucket>
-            </map>
-            <map to='#a1b91d'>
-              <bucket>&quot;Oil-Dependent Low-Impact Economies&quot;</bucket>
-            </map>
-            <map to='#ff7f0e'>
-              <bucket>&quot;Exceptional Emitter: Unique Emissions Profile&quot;</bucket>
-            </map>
-          </encoding>
-        </style-rule>
-      </style>
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
-      </semantic-values>
-      <object-graph>
-        <objects>
-          <object caption='emissions_clusters_for_tableau.csv' id='emissions_clusters_for_tableau.csv_59788A70B3744484B87AC3486FA11B42'>
-            <properties context=''>
-              <relation name='Pivot' type='pivot'>
-                <columns>
-                  <column datatype='string' name='Pivot Field Names' />
-                  <column datatype='real' name='Pivot Field Values' />
-                </columns>
-                <tag name='Pivot Field Names'>
-                  <value name='[Co2 Per Capita]' />
-                  <value name='[Coal Share]' />
-                  <value name='[Gas Share]' />
-                  <value name='[Oil Share]' />
-                  <value name='[Co2]' />
-                  <value name='[Cumulative Co2]' />
-                </tag>
-                <groups>
-                  <group name='Pivot Field Values'>
-                    <field name='[emissions_clusters_for_tableau.csv].[co2_per_capita]' />
-                    <field name='[emissions_clusters_for_tableau.csv].[coal_share]' />
-                    <field name='[emissions_clusters_for_tableau.csv].[gas_share]' />
-                    <field name='[emissions_clusters_for_tableau.csv].[oil_share]' />
-                    <field name='[emissions_clusters_for_tableau.csv].[co2]' />
-                    <field name='[emissions_clusters_for_tableau.csv].[cumulative_co2]' />
-                  </group>
-                </groups>
-                <relation connection='textscan.09ffmb60ra56x312k6xc40xsnzsq (copy)' name='emissions_clusters_for_tableau.csv' table='[emissions_clusters_for_tableau#csv]' type='table'>
-                  <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
-                    <column datatype='string' name='country' ordinal='0' />
-                    <column datatype='string' name='iso_code' ordinal='1' />
-                    <column datatype='real' name='co2' ordinal='2' />
-                    <column datatype='real' name='co2_per_capita' ordinal='3' />
-                    <column datatype='real' name='coal_co2' ordinal='4' />
-                    <column datatype='real' name='oil_co2' ordinal='5' />
-                    <column datatype='real' name='gas_co2' ordinal='6' />
-                    <column datatype='real' name='cement_co2' ordinal='7' />
-                    <column datatype='real' name='cumulative_co2' ordinal='8' />
-                    <column datatype='real' name='land_use_change_co2' ordinal='9' />
-                    <column datatype='real' name='population' ordinal='10' />
-                    <column datatype='real' name='coal_share' ordinal='11' />
-                    <column datatype='real' name='oil_share' ordinal='12' />
-                    <column datatype='real' name='gas_share' ordinal='13' />
-                    <column datatype='integer' name='cluster_5' ordinal='14' />
-                    <column datatype='string' name='cluster_5_name' ordinal='15' />
-                    <column datatype='integer' name='cluster_8' ordinal='16' />
-                    <column datatype='string' name='cluster_8_name' ordinal='17' />
-                  </columns>
-                </relation>
               </relation>
             </properties>
             <properties context='extract'>
@@ -2356,6 +2378,14 @@
       <command command='tsc:brush'>
         <param name='field-captions' value='Cluster 5 Name' />
         <param name='target' value='Global Emissions Overview' />
+      </command>
+    </action>
+    <action caption='Highlight 4 (generated)' name='[Action4_6327746D267946DF818CAFD9D1BB641E]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Dashboard 5' type='sheet' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Dominant Energy Source' />
+        <param name='target' value='Dashboard 5' />
       </command>
     </action>
   </actions>
@@ -2993,7 +3023,275 @@
       </table>
       <simple-id uuid='{CF6FB780-286E-4BDB-A7EB-F991C804C5FB}' />
     </worksheet>
-    <worksheet name='Emissions Mix'>
+    <worksheet name='Cumulative CO2 Top Countries'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='emissions_clusters_for_tableau' name='federated.0yo8jcp1jdqi3313bk0x51wkeqwr' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0yo8jcp1jdqi3313bk0x51wkeqwr'>
+            <column caption='Cluster 5 Name' datatype='string' name='[cluster_5_name]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;Exceptional Emitter: Unique Emissions Profile&quot;' value='United States' />
+              </aliases>
+            </column>
+            <column caption='Co2 Per Capita' datatype='real' name='[co2_per_capita]' role='measure' type='quantitative' />
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Cumulative Co2' datatype='real' name='[cumulative_co2]' role='measure' type='quantitative' />
+            <column-instance column='[cluster_5_name]' derivation='None' name='[none:cluster_5_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[co2_per_capita]' derivation='Sum' name='[sum:co2_per_capita:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[cumulative_co2]' derivation='Sum' name='[sum:cumulative_co2:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:country:nk]'>
+            <groupfilter count='20' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='SUM([cumulative_co2])' function='order' user:ui-marker='order'>
+                <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;Australia&quot;' />
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;Brazil&quot;' />
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;Canada&quot;' />
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;China&quot;' />
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;France&quot;' />
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;Germany&quot;' />
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;India&quot;' />
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;Iran&quot;' />
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;Italy&quot;' />
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;Japan&quot;' />
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;Mexico&quot;' />
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;Poland&quot;' />
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;Russia&quot;' />
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;Saudi Arabia&quot;' />
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;South Africa&quot;' />
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;South Korea&quot;' />
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;Spain&quot;' />
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;Ukraine&quot;' />
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;United Kingdom&quot;' />
+                  <groupfilter function='member' level='[none:country:nk]' member='&quot;United States&quot;' />
+                </groupfilter>
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:country:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:cumulative_co2:qk]' shelf='columns' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:cluster_5_name:nk]</column>
+            <column>[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:country:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='width' field='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:cumulative_co2:qk]' value='66' />
+            <format attr='width' field='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:co2_per_capita:qk]' value='66' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:country:nk]' value='40' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-orientation' field='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:country:nk]' value='-90' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:cumulative_co2:qk]' palette='blue_teal_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#f0f7fa' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:cumulative_co2:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:cumulative_co2:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:cumulative_co2:qk]' />
+              <text column='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:cumulative_co2:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:co2_per_capita:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:cumulative_co2:qk]' />
+              <text column='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:co2_per_capita:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:cumulative_co2:qk] + [federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:co2_per_capita:qk])</rows>
+        <cols>[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:country:nk]</cols>
+      </table>
+      <simple-id uuid='{85AA4B14-61E7-4380-A7CB-35B006B2911D}' />
+    </worksheet>
+    <worksheet name='Emissions Mix (Country))'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>CO2 Emission Source Breakdown by Cluster</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='emissions_clusters_for_tableau' name='federated.0yo8jcp1jdqi3313bk0x51wkeqwr' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0yo8jcp1jdqi3313bk0x51wkeqwr'>
+            <column caption='Dominant Energy Source' datatype='string' name='[Calculation_2123939864289161216]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [coal_share] &gt; [oil_share] AND [coal_share] &gt; [gas_share] THEN &apos;Coal&apos;&#10;ELSEIF [oil_share] &gt; [coal_share] AND [oil_share] &gt; [gas_share] THEN &apos;Oil&apos;&#10;ELSE &apos;Gas&apos;&#10;END' />
+            </column>
+            <column caption='Coal Share Percent' datatype='real' name='[Calculation_623185660731011072]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[coal_share]' />
+            </column>
+            <column caption='Oil Share Percent' datatype='real' name='[Calculation_623185660731109377]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[oil_share]' />
+            </column>
+            <column caption='Gas Share Percent' datatype='real' name='[Calculation_623185660731158530]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[gas_share]' />
+            </column>
+            <column-instance column='[Calculation_623185660731011072]' derivation='Avg' name='[avg:Calculation_623185660731011072:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_623185660731109377]' derivation='Avg' name='[avg:Calculation_623185660731109377:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_623185660731158530]' derivation='Avg' name='[avg:Calculation_623185660731158530:qk]' pivot='key' type='quantitative' />
+            <column caption='Cluster 5 Name' datatype='string' name='[cluster_5_name]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;Exceptional Emitter: Unique Emissions Profile&quot;' value='United States' />
+              </aliases>
+            </column>
+            <column-instance column='[Calculation_2123939864289161216]' derivation='Count' name='[cnt:Calculation_2123939864289161216:qk]' pivot='key' type='quantitative' />
+            <column caption='Coal Share' datatype='real' name='[coal_share]' role='measure' type='quantitative' />
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Cumulative Co2' datatype='real' name='[cumulative_co2]' role='measure' type='quantitative' />
+            <column caption='Gas Share' datatype='real' name='[gas_share]' role='measure' type='quantitative' />
+            <column-instance column='[cluster_5_name]' derivation='None' name='[none:cluster_5_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column caption='Oil Share' datatype='real' name='[oil_share]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[avg:Calculation_623185660731011072:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[avg:Calculation_623185660731158530:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[avg:Calculation_623185660731109377:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:country:nk]'>
+            <groupfilter count='10' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='SUM([cumulative_co2])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:country:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <computed-sort column='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:country:nk]' direction='ASC' using='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[cnt:Calculation_2123939864289161216:qk]' />
+          <slices>
+            <column>[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[:Measure Names]</column>
+            <column>[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:cluster_5_name:nk]</column>
+            <column>[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:country:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[Multiple Values]' scope='cols' value='' />
+            <format attr='display' class='0' field='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[Multiple Values]' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='border-width' scope='cols' value='0' />
+            <format attr='border-style' scope='cols' value='none' />
+            <format attr='text-format' field='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[Multiple Values]' value='p0.0%' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='background-color' value='#e7f1f5' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='display-field-labels' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' scope='cols' value='off' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[:Measure Names]' value='Emission Source'>
+              <formatted-text>
+                <run>Emission Source</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[:Measure Names]' />
+              <text column='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[Multiple Values]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run>&lt;</run>
+                <run>[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[Multiple Values]</run>
+                <run>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#ffffff' />
+                <format attr='mark-transparency' value='255' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:country:nk]</rows>
+        <cols>[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[Multiple Values]</cols>
+      </table>
+      <simple-id uuid='{521DBCB2-54BF-44A3-B78C-196205EDBA59}' />
+    </worksheet>
+    <worksheet name='Emissions Mix(cluster)'>
       <layout-options>
         <title>
           <formatted-text>
@@ -3443,6 +3741,155 @@
       </table>
       <simple-id uuid='{D6116336-671A-4604-A63E-27E942CCF2BA}' />
     </worksheet>
+    <worksheet name='Intro Map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='emissions_clusters_for_tableau' name='federated.0yo8jcp1jdqi3313bk0x51wkeqwr' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0yo8jcp1jdqi3313bk0x51wkeqwr'>
+            <column caption='Dominant Energy Source' datatype='string' name='[Calculation_2123939864289161216]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [coal_share] &gt; [oil_share] AND [coal_share] &gt; [gas_share] THEN &apos;Coal&apos;&#10;ELSEIF [oil_share] &gt; [coal_share] AND [oil_share] &gt; [gas_share] THEN &apos;Oil&apos;&#10;ELSE &apos;Gas&apos;&#10;END' />
+            </column>
+            <column caption='Cluster 5 Name' datatype='string' name='[cluster_5_name]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;Exceptional Emitter: Unique Emissions Profile&quot;' value='United States' />
+              </aliases>
+            </column>
+            <column caption='Coal Share' datatype='real' name='[coal_share]' role='measure' type='quantitative' />
+            <column caption='Country' datatype='string' name='[country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Cumulative Co2' datatype='real' name='[cumulative_co2]' role='measure' type='quantitative' />
+            <column caption='Gas Share' datatype='real' name='[gas_share]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_2123939864289161216]' derivation='None' name='[none:Calculation_2123939864289161216:nk]' pivot='key' type='nominal' />
+            <column-instance column='[cluster_5_name]' derivation='None' name='[none:cluster_5_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[country]' derivation='None' name='[none:country:nk]' pivot='key' type='nominal' />
+            <column caption='Oil Share' datatype='real' name='[oil_share]' role='measure' type='quantitative' />
+            <column-instance column='[cumulative_co2]' derivation='Sum' name='[sum:cumulative_co2:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:country:nk]'>
+            <groupfilter count='20' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='SUM([cumulative_co2])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:country:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:cluster_5_name:nk]</column>
+            <column>[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:country:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[Longitude (generated)]' field-type='quantitative' max='59358157.89011275' min='21553128.389274377' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[Latitude (generated)]' field-type='quantitative' max='18923778.676449098' min='-7866257.220989475' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='background-color' field='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:country:nk]' value='#ffffff' />
+            <format attr='background-color' scope='cols' value='#efebe8' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:cumulative_co2:qk]' num-steps='5' palette='blue_teal_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='legend'>
+            <format attr='background-color' value='#e6e6e6' />
+            <_.fcp.IndividualControlFormatting.true...format attr='font-size' field='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:Calculation_2123939864289161216:nk]' id='legend-color' value='10' />
+            <_.fcp.IndividualControlFormatting.true...format attr='border-style' field='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:Calculation_2123939864289161216:nk]' id='legend-color' value='solid' />
+            <_.fcp.IndividualControlFormatting.true...format attr='border-width' field='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:Calculation_2123939864289161216:nk]' id='legend-color' value='2' />
+          </style-rule>
+          <_.fcp.IndividualControlFormatting.true...style-rule element='legend-title'>
+            <_.fcp.IndividualControlFormatting.true...format attr='font-size' field='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:Calculation_2123939864289161216:nk]' id='legend-color' value='10' />
+            <_.fcp.IndividualControlFormatting.true...format attr='text-align' field='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:Calculation_2123939864289161216:nk]' id='legend-color' value='center' />
+          </_.fcp.IndividualControlFormatting.true...style-rule>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='b01002_001e' value='false' />
+            <format attr='enabled' id='b01002_002e' value='false' />
+            <format attr='enabled' id='b01002_003e' value='false' />
+            <format attr='enabled' id='dp02_0001e' value='false' />
+            <format attr='enabled' id='dp02_0015e' value='false' />
+            <format attr='enabled' id='dp03_0027e_plus_dp03_0029e' value='false' />
+            <format attr='enabled' id='dp03_0028e' value='false' />
+            <format attr='enabled' id='dp03_0030e_plus_dp03_0031e' value='false' />
+            <format attr='enabled' id='dp03_0062e' value='false' />
+            <format attr='enabled' id='dp03_0088e' value='false' />
+            <format attr='enabled' id='dp04_0001e' value='false' />
+            <format attr='enabled' id='dp04_0046e' value='false' />
+            <format attr='enabled' id='dp04_0047e' value='false' />
+            <format attr='enabled' id='dp04_0089e' value='false' />
+            <format attr='enabled' id='dp05_0001e' value='false' />
+            <format attr='enabled' id='dp05_0002e_div_dp05_0003e' value='false' />
+            <format attr='enabled' id='dp05_0032e' value='false' />
+            <format attr='enabled' id='dp05_0033e' value='false' />
+            <format attr='enabled' id='dp05_0034e' value='false' />
+            <format attr='enabled' id='dp05_0039e' value='false' />
+            <format attr='enabled' id='dp05_0047e' value='false' />
+            <format attr='enabled' id='dp05_0053e' value='false' />
+            <format attr='enabled' id='dp05_0066e' value='false' />
+            <format attr='enabled' id='dp05_0077e' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0' />
+            <format attr='map-style' value='normal' />
+          </style-rule>
+          <style-rule element='map-data-layer'>
+            <format attr='palette' value='tableau-map-blue-green-light' />
+            <format attr='geo-area-type' value='State' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Multipolygon' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:Calculation_2123939864289161216:nk]' />
+              <text column='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:country:nk]' />
+              <text column='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:Calculation_2123939864289161216:nk]' />
+              <lod column='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:country:nk]' />
+              <lod column='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:cumulative_co2:qk]' />
+              <lod column='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:Calculation_2123939864289161216:nk]' />
+              <geometry column='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[Geometry (generated)]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#787878'>Country:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:country:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#787878'>Dominant Energy Source:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:Calculation_2123939864289161216:nk]>]]></run>
+                <run>&#10;Cumulative CO2 Emissions:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:cumulative_co2:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run fontsize='10'><![CDATA[<[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:country:nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontsize='8'><![CDATA[(<[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:Calculation_2123939864289161216:nk]>)]]></run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='size' value='1.7911050319671631' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[Latitude (generated)]</rows>
+        <cols>[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{86CE64C4-70B8-4D52-8676-386CA35C8A9D}' />
+    </worksheet>
     <worksheet name='Policy Considerations'>
       <table>
         <view>
@@ -3700,8 +4147,8 @@
       <size sizing-mode='automatic' />
       <zones>
         <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='97708' id='7' param='vert' removable='false' type-v2='layout-flow' w='98508' x='746' y='1146'>
-            <zone h='5874' id='8' type-v2='title' w='98508' x='746' y='1146'>
+          <zone h='98292' id='7' param='vert' removable='false' type-v2='layout-flow' w='98932' x='534' y='854'>
+            <zone h='4376' id='8' type-v2='title' w='98932' x='534' y='854'>
               <zone-style>
                 <format attr='border-color' value='#000000' />
                 <format attr='border-style' value='none' />
@@ -3709,12 +4156,43 @@
                 <format attr='margin' value='4' />
               </zone-style>
             </zone>
-            <zone h='91834' id='1' param='vert' removable='false' type-v2='layout-flow' w='98508' x='746' y='7020'>
-              <zone h='14470' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='98508' x='746' y='7020' />
-              <zone h='77364' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='98508' x='746' y='21490'>
-                <flipboard active-id='2' nav-type='caption' show-nav-arrows='true'>
+            <zone h='93916' id='1' param='vert' removable='false' type-v2='layout-flow' w='98932' x='534' y='5230'>
+              <zone h='10779' id='4' is-fixed='true' paired-zone-id='5' removable='false' type-v2='flipboard-nav' w='98932' x='534' y='5230' />
+              <zone h='83137' id='5' paired-zone-id='4' removable='false' type-v2='flipboard' w='98932' x='534' y='16009'>
+                <flipboard active-id='6' nav-type='caption' show-nav-arrows='true'>
                   <story-points>
-                    <story-point caption='Introduction: Global Emissions Clusters' captured-sheet='Global Emissions Overview' id='1'>
+                    <story-point caption='Introduction: The Need for Differentiated Emissions Policies' captured-sheet='Dashboard 5' id='6'>
+                      <currentDeltas>
+                        <worksheet name='Cumulative CO2 Top Countries'>
+                          <selection-collection>
+                            <node-selection select-tuples='false'>
+                              <oriented-node-reference orientation='vertical'>
+                                <node-reference>
+                                  <axis>[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:cumulative_co2:qk]</axis>
+                                </node-reference>
+                                <page-reference />
+                              </oriented-node-reference>
+                            </node-selection>
+                          </selection-collection>
+                        </worksheet>
+                        <dashboard name='Dashboard 5'>
+                          <zone id='10'>
+                            <formatted-text>
+                              <run bold='true' fontcolor='#000000' fontsize='11'>A one-size-fits-all approach to climate policy, while administratively convenient, fundamentally ignores the complex realities of global emissions. </run>
+                              <run fontcolor='#000000' fontsize='11'>Effective emissions reduction requires strategies tailored to each nation&apos;s unique circumstances. To illustrate this point, let&apos;s examine the top 20 countries by cumulative CO₂ emissions and understand why differentiated approaches are essential:</run>
+                              <run>Æ&#10;&#10;</run>
+                              <run bold='true' fontcolor='#000000' fontsize='11'>The charts below compare cumulative CO₂ (total historical emissions) against per capita CO₂ (emissions per person).</run>
+                              <run fontcolor='#000000' fontsize='11'> Nations like the United States rank high in both metrics, while countries like India have large total emissions but low per capita footprints</run>
+                              <run>Æ&#10;&#10;</run>
+                              <run bold='true' fontcolor='#000000' fontsize='11'>The map to the right shows the dominant energy sources (coal, gas, oil) for each country</run>
+                              <run fontcolor='#000000' fontsize='11'>. Nations have developed different energy dependencies based on their natural resources, industrial history, and economic development paths. This creates distinct challenges for transitioning to low-carbon alternatives.</run>
+                            </formatted-text>
+                          </zone>
+                        </dashboard>
+                      </currentDeltas>
+                      <capturedDeltas />
+                    </story-point>
+                    <story-point caption='Global Emissions Clusters' captured-sheet='Global Emissions Overview' id='1'>
                       <capturedDeltas>
                         <worksheet name='Global Cluster Map'>
                           <style delta-type='added'>
@@ -3809,9 +4287,9 @@
       <size sizing-mode='automatic' />
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='61596' id='7' param='horz' type-v2='layout-flow' w='98864' x='568' y='964'>
-            <zone h='61596' id='5' type-v2='layout-basic' w='98864' x='568' y='964'>
-              <zone h='61596' id='9' name='Cluster Character Heatmap' w='37519' x='61913' y='964'>
+          <zone h='61579' id='7' param='horz' type-v2='layout-flow' w='98932' x='534' y='976'>
+            <zone h='61579' id='5' type-v2='layout-basic' w='98932' x='534' y='976'>
+              <zone h='61579' id='9' name='Cluster Character Heatmap' w='37545' x='61921' y='976'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='solid' />
@@ -3819,7 +4297,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='61596' id='10' name='Avg. Pop. by Cluster' w='44685' x='17228' y='964'>
+              <zone h='61579' id='10' name='Avg. Pop. by Cluster' w='44716' x='17205' y='976'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='solid' />
@@ -3827,7 +4305,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone forceUpdate='true' h='61596' id='13' type-v2='text' w='16660' x='568' y='964'>
+              <zone forceUpdate='true' h='61579' id='13' type-v2='text' w='16671' x='534' y='976'>
                 <formatted-text>
                   <run fontalignment='1' fontcolor='#000000' fontsize='12'>This dashboard provides a detailed look at the energy sources and population characteristics of each emissions cluster.</run>
                   <run fontalignment='1'>Æ&#10;&#10;</run>
@@ -3845,7 +4323,7 @@
               </zone>
             </zone>
           </zone>
-          <zone h='36476' id='3' name='Emissions Mix' w='82203' x='17229' y='62560'>
+          <zone h='36469' id='3' name='Emissions Mix(cluster)' w='82260' x='17206' y='62555'>
             <zone-style>
               <format attr='border-color' value='#000000' />
               <format attr='border-style' value='solid' />
@@ -3853,8 +4331,8 @@
               <format attr='margin' value='4' />
             </zone-style>
           </zone>
-          <zone fixed-size='160' h='36476' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='16661' x='568' y='62560'>
-            <zone fixed-size='124' h='15904' id='11' is-fixed='true' name='Avg. Pop. by Cluster' pane-specification-id='0' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:cluster_5_name:nk]' type-v2='color' w='16519' x='639' y='62680'>
+          <zone fixed-size='160' h='36469' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='16672' x='534' y='62555'>
+            <zone fixed-size='124' h='16098' id='11' is-fixed='true' name='Avg. Pop. by Cluster' pane-specification-id='0' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:cluster_5_name:nk]' type-v2='color' w='16538' x='601' y='62677'>
               <zone-style>
                 <format attr='border-color' value='#000000' />
                 <format attr='border-style' value='none' />
@@ -3862,7 +4340,7 @@
                 <format attr='margin' value='4' />
               </zone-style>
             </zone>
-            <zone h='10362' id='8' name='Emissions Mix' pane-specification-id='0' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[:Measure Names]' type-v2='color' w='16519' x='639' y='78584'>
+            <zone h='10488' id='8' name='Emissions Mix(cluster)' pane-specification-id='0' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[:Measure Names]' type-v2='color' w='16538' x='601' y='78775'>
               <zone-style>
                 <format attr='border-color' value='#000000' />
                 <format attr='border-style' value='none' />
@@ -3889,9 +4367,9 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1100' minheight='1100' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='39' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98072' id='38' param='vert' type-v2='layout-flow' w='98864' x='568' y='964'>
-                <zone forceUpdate='true' h='61596' id='13' type-v2='text' w='16660' x='568' y='964'>
+            <zone h='100000' id='49' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='48' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+                <zone forceUpdate='true' h='61585' id='13' type-v2='text' w='16671' x='534' y='972'>
                   <formatted-text>
                     <run fontalignment='1' fontcolor='#000000' fontsize='12'>This dashboard provides a detailed look at the energy sources and population characteristics of each emissions cluster.</run>
                     <run fontalignment='1'>Æ&#10;&#10;</run>
@@ -3908,7 +4386,7 @@
                     <format attr='background-color' value='#e6ecf0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='61596' id='10' is-fixed='true' name='Avg. Pop. by Cluster' w='44685' x='17228' y='964'>
+                <zone fixed-size='280' h='61585' id='10' is-fixed='true' name='Avg. Pop. by Cluster' w='44716' x='17205' y='972'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -3917,7 +4395,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='124' h='15904' id='11' name='Avg. Pop. by Cluster' pane-specification-id='0' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:cluster_5_name:nk]' type-v2='color' w='16519' x='639' y='62680'>
+                <zone fixed-size='124' h='16039' id='11' name='Avg. Pop. by Cluster' pane-specification-id='0' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:cluster_5_name:nk]' type-v2='color' w='16538' x='601' y='62679'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -3926,7 +4404,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='61596' id='9' is-fixed='true' name='Cluster Character Heatmap' w='37519' x='61913' y='964'>
+                <zone fixed-size='280' h='61585' id='9' is-fixed='true' name='Cluster Character Heatmap' w='37545' x='61921' y='972'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -3935,7 +4413,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='36476' id='3' is-fixed='true' name='Emissions Mix' w='82203' x='17229' y='62560'>
+                <zone fixed-size='280' h='36471' id='3' is-fixed='true' name='Emissions Mix(cluster)' w='82260' x='17206' y='62557'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -3944,7 +4422,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='10362' id='8' name='Emissions Mix' pane-specification-id='0' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[:Measure Names]' type-v2='color' w='16519' x='639' y='78584'>
+                <zone h='10450' id='8' name='Emissions Mix(cluster)' pane-specification-id='0' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[:Measure Names]' type-v2='color' w='16538' x='601' y='78718'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -3967,6 +4445,170 @@
       </devicelayouts>
       <simple-id uuid='{FE8DF3AE-AC44-4A28-88AC-085E13BF09F0}' />
     </dashboard>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 5'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98292' id='19' param='vert' type-v2='layout-flow' w='98932' x='534' y='854'>
+            <zone h='98292' id='17' type-v2='layout-basic' w='98932' x='534' y='854'>
+              <zone h='98292' id='7' param='horz' type-v2='layout-flow' w='55837' x='43629' y='854'>
+                <zone h='98292' id='5' type-v2='layout-basic' w='55837' x='43629' y='854'>
+                  <zone h='74066' id='3' name='Intro Map' show-title='false' w='55837' x='43629' y='854'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone forceUpdate='true' h='24226' id='12' type-v2='text' w='55837' x='43629' y='74920'>
+                    <formatted-text>
+                      <run bold='true' fontcolor='#121212' fontsize='11'>Climate change mitigation requires understanding the diverse circumstances of different countries. A one-size-fits-all approach to emissions reduction is ineffective due to vast differences in economic development, energy infrastructure, and resource availability</run>
+                      <run>Æ&#10;&#10;</run>
+                      <run bold='true' fontcolor='#121212' fontsize='11'>This clustering analysis provides a data-driven framework for developing differentiated strategies aligned with countries’ unique emissions profiles.</run>
+                    </formatted-text>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='0' />
+                      <format attr='background-color' value='#f0f7fa' />
+                    </zone-style>
+                  </zone>
+                </zone>
+              </zone>
+              <zone forceUpdate='true' h='38508' id='10' type-v2='text' w='43095' x='534' y='854'>
+                <formatted-text>
+                  <run bold='true' fontcolor='#000000' fontsize='10'>A one-size-fits-all approach to climate policy, while administratively convenient, fundamentally ignores the complex realities of global emissions. </run>
+                  <run fontcolor='#000000' fontsize='10'>Effective emissions reduction requires strategies tailored to each nation&apos;s unique circumstances. To illustrate this point, let&apos;s examine the top 20 countries by cumulative CO₂ emissions and understand why differentiated approaches are essential:</run>
+                  <run>Æ&#10;&#10;</run>
+                  <run bold='true' fontcolor='#000000' fontsize='10'>The charts below compare cumulative CO₂ (total historical emissions) against per capita CO₂ (emissions per person).</run>
+                  <run fontcolor='#000000' fontsize='10'> Nations like the United States rank high in both metrics, while countries like India have large total emissions but low per capita footprints</run>
+                  <run>Æ&#10;&#10;</run>
+                  <run bold='true' fontcolor='#000000' fontsize='10'>The map to the right shows the dominant energy sources (coal, gas, oil) for each country</run>
+                  <run fontcolor='#000000' fontsize='10'>. Nations have developed different energy dependencies based on their natural resources, industrial history, and economic development paths. This creates distinct challenges for transitioning to low-carbon alternatives.</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='0' />
+                  <format attr='padding' value='10' />
+                  <format attr='background-color' value='#f0f7fa' />
+                </zone-style>
+              </zone>
+              <zone h='59784' id='11' name='Cumulative CO2 Top Countries' show-title='false' w='43095' x='534' y='39362'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='0' />
+                  <format attr='padding' value='1' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='9268' id='9' name='Intro Map' pane-specification-id='2' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:cumulative_co2:qk]' type-v2='color' w='8550' x='89808' y='73659' />
+        <zone h='10672' id='8' name='Intro Map' pane-specification-id='0' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:Calculation_2123939864289161216:nk]' type-v2='color' w='11007' x='44229' y='61793' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='850' minheight='850' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='16' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98048' id='15' param='vert' type-v2='layout-flow' w='98932' x='534' y='976'>
+                <zone forceUpdate='true' h='34877' id='10' type-v2='text' w='34208' x='534' y='976'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#000000' fontsize='10'>A one-size-fits-all approach to climate policy, while administratively convenient, fundamentally ignores the complex realities of global emissions. </run>
+                    <run fontcolor='#000000' fontsize='10'>Effective emissions reduction requires strategies tailored to each nation&apos;s unique circumstances. To illustrate this point, let&apos;s examine the top 20 countries by cumulative CO₂ emissions and understand why differentiated approaches are essential:</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontsize='10'>The charts below compare cumulative CO₂ (total historical emissions) against per capita CO₂ (emissions per person).</run>
+                    <run fontcolor='#000000' fontsize='10'> Nations like the United States rank high in both metrics, while countries like India have large total emissions but low per capita footprints</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run bold='true' fontcolor='#000000' fontsize='10'>The map to the right shows the dominant energy sources (coal, gas, oil) for each country</run>
+                    <run fontcolor='#000000' fontsize='10'>. Nations have developed different energy dependencies based on their natural resources, industrial history, and economic development paths. This creates distinct challenges for transitioning to low-carbon alternatives.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#f0f7fa' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='84145' id='3' is-fixed='true' name='Intro Map' show-title='false' w='64724' x='34742' y='976'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='9268' id='9' name='Intro Map' pane-specification-id='2' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:cumulative_co2:qk]' type-v2='color' w='8550' x='89808' y='73659'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='9512' id='8' name='Intro Map' pane-specification-id='0' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:Calculation_2123939864289161216:nk]' type-v2='color' w='9576' x='79891' y='73537'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='63171' id='11' is-fixed='true' name='Cumulative CO2 Top Countries' show-title='false' w='34208' x='534' y='35853'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='13903' id='12' type-v2='text' w='64724' x='34742' y='85121'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#121212' fontsize='11'>Climate change mitigation requires understanding the diverse circumstances of different countries. A one-size-fits-all approach to emissions reduction is ineffective due to vast differences in economic development, energy infrastructure, and resource availability</run>
+                    <run>Æ&#10;&#10;</run>
+                    <run bold='true' fontcolor='#121212' fontsize='11'>This clustering analysis provides a data-driven framework for developing differentiated strategies aligned with countries’ unique emissions profiles.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#f0f7fa' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{1BDD7ECD-7F42-488D-8590-77D25441BAFF}' />
+    </dashboard>
     <dashboard enable-sort-zone-taborder='true' name='Global Emissions Overview'>
       <style>
         <style-rule element='table'>
@@ -3976,11 +4618,11 @@
       <size sizing-mode='automatic' />
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='67831' id='18' param='horz' type-v2='layout-flow' w='98864' x='568' y='964'>
-            <zone h='67831' id='15' param='vert' type-v2='layout-flow' w='98864' x='568' y='964'>
-              <zone h='67831' id='7' param='horz' type-v2='layout-flow' w='98864' x='568' y='964'>
-                <zone h='67831' id='5' type-v2='layout-basic' w='98864' x='568' y='964'>
-                  <zone h='67831' id='3' name='Global Cluster Map' w='58665' x='20567' y='964'>
+          <zone h='67813' id='18' param='horz' type-v2='layout-flow' w='98932' x='534' y='976'>
+            <zone h='67813' id='15' param='vert' type-v2='layout-flow' w='98932' x='534' y='976'>
+              <zone h='67813' id='7' param='horz' type-v2='layout-flow' w='98932' x='534' y='976'>
+                <zone h='67813' id='5' type-v2='layout-basic' w='98932' x='534' y='976'>
+                  <zone h='67813' id='3' name='Global Cluster Map' w='58706' x='20546' y='976'>
                     <zone-style>
                       <format attr='border-color' value='#000000' />
                       <format attr='border-style' value='solid' />
@@ -3988,7 +4630,7 @@
                       <format attr='margin' value='4' />
                     </zone-style>
                   </zone>
-                  <zone h='52032' id='41' name='Countries in Each Cluster' show-title='false' w='20200' x='79232' y='16763'>
+                  <zone h='52019' id='41' name='Countries in Each Cluster' show-title='false' w='20214' x='79252' y='16770'>
                     <zone-style>
                       <format attr='border-color' value='#000000' />
                       <format attr='border-style' value='solid' />
@@ -3996,7 +4638,7 @@
                       <format attr='margin' value='4' />
                     </zone-style>
                   </zone>
-                  <zone h='15799' id='9' name='Global Cluster Map' pane-specification-id='0' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:cluster_5_name:nk]' type-v2='color' w='20200' x='79232' y='964'>
+                  <zone h='15794' id='9' name='Global Cluster Map' pane-specification-id='0' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:cluster_5_name:nk]' type-v2='color' w='20214' x='79252' y='976'>
                     <zone-style>
                       <format attr='border-color' value='#000000' />
                       <format attr='border-style' value='solid' />
@@ -4004,7 +4646,7 @@
                       <format attr='margin' value='4' />
                     </zone-style>
                   </zone>
-                  <zone forceUpdate='true' h='67831' id='53' type-v2='text' w='19999' x='568' y='964'>
+                  <zone forceUpdate='true' h='67813' id='53' type-v2='text' w='20012' x='534' y='976'>
                     <formatted-text>
                       <run fontcolor='#000000' fontsize='12'>Global CO2 emissions reveal distinct country clusters based on emissions, energy mix, and historical context.</run>
                       <run>Æ&#10;&#10;</run>
@@ -4023,7 +4665,7 @@
               </zone>
             </zone>
           </zone>
-          <zone h='30241' id='54' name='Cluster Characteristics (horiz)' w='98864' x='568' y='68795'>
+          <zone h='30235' id='54' name='Cluster Characteristics (horiz)' w='98932' x='534' y='68789'>
             <zone-style>
               <format attr='border-color' value='#000000' />
               <format attr='border-style' value='solid' />
@@ -4044,9 +4686,9 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1000' minheight='1000' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='60' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98072' id='59' param='vert' type-v2='layout-flow' w='98864' x='568' y='964'>
-                <zone forceUpdate='true' h='67831' id='53' type-v2='text' w='19999' x='568' y='964'>
+            <zone h='100000' id='70' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='69' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+                <zone forceUpdate='true' h='67819' id='53' type-v2='text' w='20012' x='534' y='972'>
                   <formatted-text>
                     <run fontcolor='#000000' fontsize='12'>Global CO2 emissions reveal distinct country clusters based on emissions, energy mix, and historical context.</run>
                     <run>Æ&#10;&#10;</run>
@@ -4062,7 +4704,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='67831' id='3' is-fixed='true' name='Global Cluster Map' w='58665' x='20567' y='964'>
+                <zone fixed-size='280' h='67819' id='3' is-fixed='true' name='Global Cluster Map' w='58706' x='20546' y='972'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -4071,7 +4713,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='15799' id='9' name='Global Cluster Map' pane-specification-id='0' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:cluster_5_name:nk]' type-v2='color' w='20200' x='79232' y='964'>
+                <zone h='15796' id='9' name='Global Cluster Map' pane-specification-id='0' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:cluster_5_name:nk]' type-v2='color' w='20214' x='79252' y='972'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -4080,7 +4722,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='52032' id='41' is-fixed='true' name='Countries in Each Cluster' show-title='false' w='20200' x='79232' y='16763'>
+                <zone fixed-size='280' h='52023' id='41' is-fixed='true' name='Countries in Each Cluster' show-title='false' w='20214' x='79252' y='16768'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -4089,7 +4731,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='232' h='30241' id='54' is-fixed='true' name='Cluster Characteristics (horiz)' w='98864' x='568' y='68795'>
+                <zone fixed-size='232' h='30237' id='54' is-fixed='true' name='Cluster Characteristics (horiz)' w='98932' x='534' y='68791'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -4117,7 +4759,7 @@
       <size sizing-mode='automatic' />
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='98072' id='3' name='Cluster Characteristics (vert)' show-title='false' w='43865' x='568' y='964'>
+          <zone h='98048' id='3' name='Cluster Characteristics (vert)' show-title='false' w='43895' x='534' y='976'>
             <zone-style>
               <format attr='border-color' value='#000000' />
               <format attr='border-style' value='none' />
@@ -4125,7 +4767,7 @@
               <format attr='margin' value='4' />
             </zone-style>
           </zone>
-          <zone h='98072' id='5' name='Policy Considerations' show-title='false' w='54999' x='44433' y='964'>
+          <zone h='98048' id='5' name='Policy Considerations' show-title='false' w='55037' x='44429' y='976'>
             <zone-style>
               <format attr='border-color' value='#000000' />
               <format attr='border-style' value='none' />
@@ -4145,9 +4787,9 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='24' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98072' id='23' param='vert' type-v2='layout-flow' w='98864' x='568' y='964'>
-                <zone fixed-size='280' h='98072' id='3' is-fixed='true' name='Cluster Characteristics (vert)' show-title='false' w='43865' x='568' y='964'>
+            <zone h='100000' id='34' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='33' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+                <zone fixed-size='280' h='98056' id='3' is-fixed='true' name='Cluster Characteristics (vert)' show-title='false' w='43895' x='534' y='972'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -4156,7 +4798,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='98072' id='5' is-fixed='true' name='Policy Considerations' show-title='false' w='54999' x='44433' y='964'>
+                <zone fixed-size='280' h='98056' id='5' is-fixed='true' name='Policy Considerations' show-title='false' w='55037' x='44429' y='972'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -4183,9 +4825,9 @@
       <size sizing-mode='automatic' />
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='49036' id='7' param='horz' type-v2='layout-flow' w='98864' x='568' y='50000'>
-            <zone h='49036' id='5' type-v2='layout-basic' w='98864' x='568' y='50000'>
-              <zone h='49036' id='9' name='USA vs. The World: Total Emissions' w='55600' x='43832' y='50000'>
+          <zone h='49024' id='7' param='horz' type-v2='layout-flow' w='98932' x='534' y='50000'>
+            <zone h='49024' id='5' type-v2='layout-basic' w='98932' x='534' y='50000'>
+              <zone h='49024' id='9' name='USA vs. The World: Total Emissions' w='55639' x='43827' y='50000'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='solid' />
@@ -4193,7 +4835,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone forceUpdate='true' h='49036' id='11' type-v2='text' w='43264' x='568' y='50000'>
+              <zone forceUpdate='true' h='49024' id='11' type-v2='text' w='43293' x='534' y='50000'>
                 <formatted-text>
                   <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='10'>The United States stands as an exceptional case in global emissions analysis, warranting its own distinct cluster. As shown in these visualizations.</run>
                   <run>Æ&#10;&#10;</run>
@@ -4214,7 +4856,7 @@
               </zone>
             </zone>
           </zone>
-          <zone h='49036' id='10' name='Global Cluster Map' w='49430' x='568' y='964'>
+          <zone h='49024' id='10' name='Global Cluster Map' w='49464' x='534' y='976'>
             <zone-style>
               <format attr='border-color' value='#000000' />
               <format attr='border-style' value='solid' />
@@ -4222,7 +4864,7 @@
               <format attr='margin' value='4' />
             </zone-style>
           </zone>
-          <zone h='49036' id='3' name='USA vs. The World: CO2 Emissions (per capita)' w='49434' x='49998' y='964'>
+          <zone h='49024' id='3' name='USA vs. The World: CO2 Emissions (per capita)' w='49468' x='49998' y='976'>
             <zone-style>
               <format attr='border-color' value='#000000' />
               <format attr='border-style' value='solid' />
@@ -4245,9 +4887,9 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1000' minheight='1000' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='32' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98072' id='31' param='vert' type-v2='layout-flow' w='98864' x='568' y='964'>
-                <zone fixed-size='280' h='49036' id='10' is-fixed='true' name='Global Cluster Map' w='49430' x='568' y='964'>
+            <zone h='100000' id='42' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='41' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
+                <zone fixed-size='280' h='49028' id='10' is-fixed='true' name='Global Cluster Map' w='49464' x='534' y='972'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -4256,7 +4898,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='49036' id='3' is-fixed='true' name='USA vs. The World: CO2 Emissions (per capita)' w='49434' x='49998' y='964'>
+                <zone fixed-size='280' h='49028' id='3' is-fixed='true' name='USA vs. The World: CO2 Emissions (per capita)' w='49468' x='49998' y='972'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -4275,7 +4917,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone forceUpdate='true' h='49036' id='11' type-v2='text' w='43264' x='568' y='50000'>
+                <zone forceUpdate='true' h='49028' id='11' type-v2='text' w='43293' x='534' y='50000'>
                   <formatted-text>
                     <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='10'>The United States stands as an exceptional case in global emissions analysis, warranting its own distinct cluster. As shown in these visualizations.</run>
                     <run>Æ&#10;&#10;</run>
@@ -4295,7 +4937,7 @@
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='49036' id='9' is-fixed='true' name='USA vs. The World: Total Emissions' w='55600' x='43832' y='50000'>
+                <zone fixed-size='280' h='49028' id='9' is-fixed='true' name='USA vs. The World: Total Emissions' w='55639' x='43827' y='50000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='solid' />
@@ -4354,7 +4996,7 @@
       </viewpoint>
       <simple-id uuid='{25F2C6FA-AEB5-411E-89A0-F520E94FC3E9}' />
     </window>
-    <window class='worksheet' name='Emissions Mix' tab-color='#4f779a'>
+    <window class='worksheet' name='Emissions Mix(cluster)' tab-color='#4f779a'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -4386,6 +5028,39 @@
         <default-map-tool-selection tool='2' />
       </viewpoint>
       <simple-id uuid='{F9F14653-C310-4BFE-AD9C-089C7065F974}' />
+    </window>
+    <window class='worksheet' name='Emissions Mix (Country))' tab-color='#4f779a'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{CB42139D-979E-4E1C-93CC-0493645FE72D}' />
     </window>
     <window class='worksheet' name='Cluster Character Heatmap' tab-color='#4f779a'>
       <cards>
@@ -4618,6 +5293,79 @@
       </viewpoint>
       <simple-id uuid='{EFDBED08-6498-480C-BDAE-118E6D821E62}' />
     </window>
+    <window class='worksheet' name='Cumulative CO2 Top Countries' tab-color='#4f779a'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='dropdown' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:country:nk]' show-filter-state='false' type='filter' values='relevant' />
+            <card pane-specification-id='1' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[sum:cumulative_co2:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{2930BC24-0627-41B8-B775-59C46EC3F61D}' />
+    </window>
+    <window class='worksheet' name='Intro Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0yo8jcp1jdqi3313bk0x51wkeqwr].[none:Calculation_2123939864289161216:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='1' />
+      </viewpoint>
+      <simple-id uuid='{4A0E6968-1B44-4218-BBB3-06BBC05DEC74}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 5'>
+      <viewpoints>
+        <viewpoint name='Cumulative CO2 Top Countries'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Intro Map'>
+          <zoom type='entire-view' />
+          <default-map-tool-selection tool='1' />
+        </viewpoint>
+      </viewpoints>
+      <active id='12' />
+      <simple-id uuid='{6B84519D-754C-4BBB-939C-3329E91E4575}' />
+    </window>
     <window class='dashboard' name='Global Emissions Overview' tab-color='#f66273'>
       <viewpoints>
         <viewpoint name='Cluster Characteristics (horiz)'>
@@ -4632,7 +5380,7 @@
           <default-map-tool-selection tool='1' />
         </viewpoint>
       </viewpoints>
-      <active id='3' />
+      <active id='-1' />
       <simple-id uuid='{80D93DD7-8BA2-49FE-B9E5-D5A23CB46921}' />
     </window>
     <window class='dashboard' name='Cluster Profiles' tab-color='#f66273'>
@@ -4643,11 +5391,11 @@
         <viewpoint name='Cluster Character Heatmap'>
           <zoom type='entire-view' />
         </viewpoint>
-        <viewpoint name='Emissions Mix'>
+        <viewpoint name='Emissions Mix(cluster)'>
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='13' />
+      <active id='-1' />
       <simple-id uuid='{4F4DE583-44C8-4852-BC2F-D8249A1D1296}' />
     </window>
     <window class='dashboard' name='USA: Exceptional Emissions' tab-color='#f66273'>
@@ -4675,12 +5423,12 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='5' />
+      <active id='-1' />
       <simple-id uuid='{005614FB-B739-42F1-B568-250C42254A3C}' />
     </window>
-    <window class='dashboard' maximized='true' name='CO2 Story' tab-color='#dec77b'>
+    <window class='dashboard' name='CO2 Story' tab-color='#dec77b'>
       <viewpoints />
-      <active id='-1' />
+      <active id='5' />
       <simple-id uuid='{83038746-E960-4562-8DF9-7B369602836B}' />
     </window>
   </windows>
